@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>aggreagated_velocity</title>
+
+    <script type="text/javascript" src="/apps/2.1/sdk.js"></script>
+
+    <script type="text/javascript">
+        Rally.onReady(function () {
+                Ext.define('CustomApp', {
+    extend: 'Rally.app.App',
+    componentCls: 'app',
+    launch: function() { 
+        
+        this.run_count = 0; 
+        this._init();
+
+        // this._customComboBox();
+        
+        // this._drawChartTemplate();
+    },
+
+    /* set up global variables */ 
+   _init:function(){
+       
+        /**************  Set up global variable  ***************/ 
+        this.legend ="" ; // report legend
+        
+        this.nbr_back_track_month = 3;  // 12 is the limit // hard coded for now                     /*  Nbr of Months Report Covers */
+        
+        this.nbr_back_track_days = 0;                                                                 /*  Nbr of Days Report Covers */                               
+       
+        this.todays_date = new Date() ;  
+        // this.todays_date = new Date(2017,2,3) ; //test date 
+        
+        this.report_end_date = new Date(this.todays_date.getFullYear(),this.todays_date.getMonth(),0);   /*  Report End Date  */
+        
+        var start_month_index = this.report_end_date.getMonth() - this.nbr_back_track_month +1;
+        var start_year = this.report_end_date.getFullYear() ;
+        if(start_month_index < 0){
+            start_month_index += 12; 
+            start_year--; 
+        }
+        this.report_start_date =  new Date(start_year ,start_month_index, 1);                              /*  Report Start Date  */
+
+        this.data_table=[];                                                                               /* Core Data table of report */
+        this.month_index={0:-1,1:-1,2:-1,3:-1,4:-1,5:-1,6:-1,7:-1,8:-1,9:-1,10:-1,11:-1};        /* store month index in report(August {7:3} 7 is java index for August and 3 is index in data table) */
+        this.days_in_a_month =[31,28,31,30,31,30,31,31,30,31,30,31];                            /* number of days in each month of the year */   
+
+        /**************  Set up global variable  Data Table***************/ 
+        
+        var year = this.report_start_date.getFullYear();
+        var start_month = this.report_start_date.getMonth();
+     
+         
+        // populate report with dates bucket (will be used for the x axis of the graph)
+        for(var i = 0; i < this.nbr_back_track_month ; i ++){
+             this.data_table[i]={'month': new Date(year,start_month,1),
+                                'display_date': (start_month+1) +"/" +year,
+                                'Velocity': 0, //Math.floor(Math.random() * 100) ,      // aggregated velocity
+                                
+                                'Defects':0,
+                                'Stories':0,
+                                'Total': 0
+                                };
+            this.month_index[start_month] = i; // update month index for quick reference
+            start_month ++;
+            if(start_month === 12){
+                 start_month = 0;
+                 year++;
+             }
+            this.nbr_back_track_days += this.days_in_a_month[start_month];
+         }
+         this.nbr_back_track_days +=  this.todays_date.getDate(); // account for current month days 
+         this.end_month = start_month-1;
+        
+       /**************  Print and Debbug ***************/ 
+        console.log(" >>>>>>>>INTI>>>>>>>>>> " );
+        console.log("range in months" , this.nbr_back_track_month); 
+        console.log("range in days" , this.nbr_back_track_days);  
+        console.log("start_date", this.report_start_date); 
+        console.log("end_date", this.report_end_date); 
+        console.log("data_table", this.data_table); 
+        console.log("month_index", this.month_index);
+        console.log(" >>>>>>>>INTI>>>>>>>>>> " );
+       
+    
+       /**************  auto run ***************/ 
+        //   this.run_count++;
+        //   if(this.run_count === 1){ //first run (defaukt at load)
+        //       this._loadPortfolioItems('MBI');
+        //   }
+        this._loadStoriesAndDefects();
+
+   },
+ 
+  /* build portfolio item chooser menu */ 
+   _portfolioChooserComboBox: function(){
+       var app = this;
+       app.portfolio_items_picker =  {
+                          xtype: 'rallyportfolioitemtypecombobox',
+                          itemId: 'portfolio_items_picker_id',
+                          alwaysExpanded: false,
+                          autoExpand: false, 
+                          fieldLabel: 'Select Portfolio Item',
+                          labelWidth: 100,
+                          labelAlign: 'right',
+                           
+                          listeners: {
+                                        scope: app,
+                                        select: app._main
+                                    },
+      };
+     app.add(app.portfolio_items_picker);
+  },
+ 
+   /* all work items chooser menu */  
+   _customComboBox: function(){
+      var app = this;
+    // The data store containing the list of states
+        var work_item = Ext.create('Ext.data.Store', {
+            fields: ['abbr', 'name'],
+            data : [
+               // {"abbr":"Program",    "name":"Program"},
+                {"abbr":"BI",          "name":"BI"},
+                {"abbr":"MBI",         "name":"MBI"},
+                {"abbr":"Feature",     "name":"Feature"},
+                {"abbr":"Story",       "name":"Stories & Defects"},
+            ]
+        });
+        
+        // Create the combo box, attached to the states data store
+        app.portfolio_items_picker = Ext.create('Ext.form.ComboBox', {
+                                                    fieldLabel: 'Choose Work Item',
+                                                    itemId: 'portfolio_items_picker_id',
+                                                    store: work_item,
+                                                    queryMode: 'local',
+                                                    displayField: 'name',
+                                                    valueField: 'abbr',
+                                                    multiSelect: false,
+                                                    forceSelection: true,
+                                                    listeners: {
+                                                                    scope: app,
+                                                                    select: app._main
+                                                                },
+                                                });  
+      
+        app.add(app.portfolio_items_picker);
+  },
+   
+   _main:function(){
+      var app =this; 
+      
+      app.setLoading('Processing - Please wait ...');
+      
+      //reset data table
+      app._init();
+
+      
+      var selected_work_item = app.down('#portfolio_items_picker_id').rawValue; 
+  
+      if(selected_work_item === "Stories & Defects"){
+        //   app._loadStories();
+        app._loadStoriesAndDefects();
+      }else{
+          app._loadPortfolioItems(selected_work_item);
+      }
+
+      app.setLoading(false);
+  },
+ 
+   /** * get Portfolio item data store */
+  _loadPortfolioItems:function (selected_portfolio_item){
+        var app = this;
+        // var program_filter =  Rally.data.wsapi.Filter.fromQueryString('(FormattedID = "P20")'); 
+         //portfolio filter:   //((state = "Done") and (StateChangedDate >= today-102))
+        var filter1 =  Rally.data.wsapi.Filter.fromQueryString('(state = "Done")'); 
+        var filter2 = Rally.data.wsapi.Filter.fromQueryString('(StateChangedDate >= today-'+  app.nbr_back_track_days +')');
+        var filter = filter1.and(filter2); 
+      
+        
+         Ext.create('Rally.data.wsapi.Store', {
+            model: 'portfolioitem/' + selected_portfolio_item,            
+            autoLoad: true,
+            filters: filter,    
+            limit: Infinity,
+            sorters: [
+                        { property: 'StateChangedDate', direction: 'ASC'   }
+                     ],             
+            enableHierarchy: true,
+            listeners: { 
+                load: function(store, data) {
+                      console.log(selected_portfolio_item , " items: " , data);  
+                      app._processPortfolioItems(data);
+                      app.data = data; 
+                },
+                scope: app
+            },
+            fetch: ['c_PrimaryTeam','Project','LeafStoryCount','AcceptedLeafStoryPlanEstimateTotal', 'AcceptedLeafStoryCount', 'FormattedID', 'Name','State','StateChangedDate']
+        });  
+    },     
+  
+   /* process portfolio_items and calucalte point accepted on a monthly basis */
+  _processPortfolioItems:function(portfolio_items){
+      var app=this;
+      console.log("processing portfolioitem");
+
+      var total_count = 0; 
+      var total_velocity = 0;
+      var skipped_count = 0;
+    for(var i = 0; i < portfolio_items.length; i++){
+        // console.log("proecessing : " ,  portfolio_items[i].raw.FormattedID); 
+
+        var stateChangedDate = portfolio_items[i].raw.StateChangedDate;
+        // console.log("accpeted_date", accpeted_date);
+        var stateChangedDate_month = new Date(stateChangedDate).getMonth();
+        // console.log("accepted_month", accepted_month);
+        var data_table_index = app.month_index[stateChangedDate_month];
+        // console.log("data_table_index", data_table_index);
+        
+        // portfolio_items is within report date range
+        // increment all count in data table
+        if(data_table_index !== -1){ // add to data table
+        //   if(portfolio_items[i].data.AcceptedLeafStoryCount){
+               
+        //   }
+            // grand total
+            total_count++;
+            total_velocity += portfolio_items[i].raw.AcceptedLeafStoryCount;
+            // aggregated velocity
+            app.data_table[data_table_index]['Velocity'] +=  portfolio_items[i].raw.AcceptedLeafStoryCount; 
+        }else{
+             skipped_count++;
+            //  console.log('skipped Accepetd ', stories[i].data.AcceptedDate);
+        }
+    }
+    console.log('# of skipped portfolio_items ', skipped_count);
+    
+    //count month with velocity > 0 
+    var count_active_months = 0;
+    for (i=0;i< app.data_table.length;i++){
+        // console.log(">>>>>>>", app.data_table[i]['velocity']);
+        if(app.data_table[i]['Velocity'] > 0){
+            count_active_months++;
+        }
+    }
+    // console.log("count_active_months ", count_active_months);
+    
+    //done with data table
+    console.log('data_table ', app.data_table); 
+    
+   
+    // console.log("total_count " , total_count);
+    // console.log("count daily average" , (total_count / app.nbr_back_track_days).toFixed(2) );
+    // console.log("count monthly average" , (total_count / count_active_months).toFixed(2) );
+    // console.log("velocity " , total_velocity.toFixed(2));
+    // console.log("velocity monthly averga" , (total_velocity  / (count_active_months)).toFixed(2));
+    // console.log("velocity daily average" , (total_velocity  / app.nbr_back_track_days).toFixed(2));
+    var table_legend ='';
+  
+//   var table_legend  = '<style>table, th, td {border: 1px solid black;padding: 5px;} table {border-spacing: 5px;}</style>' ;
+//      table_legend =  table_legend +  '<table style="width:30%" border: 1px solid black;> ';
+//      table_legend =  table_legend + '<tr><td> Count </td> <td>' + total_count + '</td> </tr>';
+//      table_legend =  table_legend + '<tr><td> Count daily average </td> <td>' + (total_count / app.nbr_back_track_days).toFixed(2)  + '</td> </tr>';
+//      table_legend =  table_legend + '<tr><td> ount monthly average </td> <td>' + (total_count / count_active_months).toFixed(2)  + '</td> </tr>';
+//      table_legend =  table_legend + '<tr><td> Velocity </td> <td>' +  total_velocity.toFixed(2) + '</td> </tr>';
+//      table_legend =  table_legend + '<tr><td> Velocity monthly average </td> <td>' + (total_velocity  / (count_active_months)).toFixed(2) + '</td> </tr>';
+//      table_legend =  table_legend + '<tr><td> Welocity daily average </td> <td>' + (total_velocity  / app.nbr_back_track_days).toFixed(2) + '</td> </tr>';
+//      table_legend =  table_legend + '</table>';
+     
+     app._drawChartPortfolioItems(app.data_table, table_legend);
+    
+    //  app.setLoading(false);  
+      
+      
+    //   app._drawChartTemplate();
+  },
+   /** * Rally API call to get user stroies and Defects item data store */
+  _loadStoriesAndDefects:function (){
+        var app = this;
+        
+        var load_count = 0; 
+
+        // ( (ScheduleState = "Accepted") AND (AcceptedDate = Today-183)  AND (PlanEstimate > 0) AND (PlanEstimate != null)  )
+        var filter1 = Rally.data.wsapi.Filter.fromQueryString('(ScheduleState = "Accepted")');
+        var filter2 = Rally.data.wsapi.Filter.fromQueryString('(AcceptedDate = Today-'+ app.nbr_back_track_days +')');
+        
+        var filters = filter1.and(filter2); //.and(story_filter3).and(story_filter4);
+        //  console.log("story_filters", story_filters);
+        
+        // Load Stories 
+        Ext.create('Rally.data.wsapi.Store', {
+            model: 'hierarchicalrequirement',  
+            filters: filters, 
+            sorters: [{
+                        property: 'AcceptedDate',
+                        direction: 'ASC'
+                      }],
+            autoLoad: true,
+            limit: Infinity,
+            // limit: 500, // for quick debugging 
+            listeners: {
+                // load: app._start,
+                load: function(store, data) {
+                    load_count++;
+                    console.log('Loaded user stories ', load_count,  data);
+                    app.stories = data; 
+                    if(load_count === 2){ // make sure that both stories and defects are loaded before we can continue 
+                      app._processStoriesAndDefects(app.stories, app.defects);
+                    }
+                },
+                scope: app
+            },
+          fetch: ['FormattedID','AcceptedDate', 'Name','Project','ScheduleState','PlanEstimate','Tasks']
+        });
+        
+        // Load Defects
+        Ext.create('Rally.data.wsapi.Store', {
+            model: 'defect', 
+            filters: filters, 
+            sorters: [{
+                        property: 'AcceptedDate',
+                        direction: 'ASC'
+                      }],
+            autoLoad: true,
+            limit: Infinity,
+            // limit: 500, // for quick debugging 
+            listeners: {
+                // load: app._start,
+                load: function(store, data) {
+                    load_count++;
+                    console.log('Loaded defects ', load_count, data);
+                    app.defects = data; 
+                    if(load_count === 2){ // make sure that both stories and defects are loaded before we can continue 
+                      app._processStoriesAndDefects(app.stories, app.defects);
+                    }
+                },
+                scope: app
+            },
+          fetch: ['FormattedID','AcceptedDate', 'Name','Project','ScheduleState','PlanEstimate','Tasks']
+        });
+        
+    }, 
+    
+   /* process stories and calucalte point accepted on a monthly basis */
+  _processStoriesAndDefects:function(stories, defects){
+     console.log('processing stories & Defects');
+
+      var app = this;
+      var total_count = 0; 
+      var total_velocity = 0;
+      var skipped_count = 0;
+      var accpeted_date;
+      var accepted_month; 
+      var data_table_index;
+      
+    // process stories 
+    for(var i = 0; i < stories.length; i++){
+        // console.log("proecessing : " ,  stories[i].raw.FormattedID); 
+
+        accpeted_date = stories[i].raw.AcceptedDate;
+        // console.log("accpeted_date", accpeted_date);
+        accepted_month = new Date(accpeted_date).getMonth();
+        // console.log("accepted_month", accepted_month);
+        data_table_index = app.month_index[accepted_month];
+        // console.log("data_table_index", data_table_index);
+        
+        // story is within report date range
+        // increment all count in data table
+        if(data_table_index !== -1){ // add to data table
+            // grand total
+            total_count++;
+            total_velocity += stories[i].raw.PlanEstimate;
+            // aggreagated velocity 
+            app.data_table[data_table_index]['Stories']+=  stories[i].raw.PlanEstimate;  
+        }else{
+             skipped_count++;
+            //  console.log('skipped Accepetd ', stories[i].data.AcceptedDate);
+        }
+    }
+
+    // process defects 
+    for(i = 0; i < defects.length; i++){
+        // console.log("proecessing : " ,  stories[i].raw.FormattedID); 
+
+        accpeted_date = defects[i].raw.AcceptedDate;
+        // console.log("accpeted_date", accpeted_date);
+        accepted_month = new Date(accpeted_date).getMonth();
+        // console.log("accepted_month", accepted_month);
+        data_table_index = app.month_index[accepted_month];
+        // console.log("data_table_index", data_table_index);
+        
+        // defect is within report date range
+        // increment all count in data table
+        if(data_table_index !== -1){ // add to data table
+            // grand total
+            total_count++;
+            total_velocity += defects[i].raw.PlanEstimate;
+            // aggreagated velocity 
+            app.data_table[data_table_index]['Defects']+=  stories[i].raw.PlanEstimate;  
+        }else{
+             skipped_count++;
+            //  console.log('skipped Accepetd ', defects[i].data.AcceptedDate);
+        }
+    }
+    
+    // sum total
+    for(i = 0; i < app.data_table.length; i++){
+        // app.data_table[data_table_index]['Total'] =  app.data_table[data_table_index]['Defects'] + app.data_table[data_table_index]['Stories'];
+       app.data_table[i]['Total'] =  app.data_table[i]['Defects'] + app.data_table[i]['Stories']; 
+    }
+   
+    
+    console.log('# of skipped stories ', skipped_count);
+    
+    //count month with velocity > 0 
+    var count_active_months = 0;
+    for (i=0;i< app.data_table.length;i++){
+        // console.log(">>>>>>>", app.data_table[i]['velocity']);
+        if(app.data_table[i]['velocity'] > 0){
+            count_active_months++;
+        }
+    }
+    // console.log("count_active_months ", count_active_months);
+    
+    //done with data table
+    console.log('data_table ', app.data_table); 
+    
+   
+    // console.log("total_count " , total_count);
+    // console.log("count daily average" , (total_count / app.nbr_back_track_days).toFixed(2) );
+    // console.log("count monthly average" , (total_count / count_active_months).toFixed(2) );
+    // console.log("velocity " , total_velocity.toFixed(2));
+    // console.log("velocity monthly averga" , (total_velocity  / (count_active_months)).toFixed(2));
+    // console.log("velocity daily average" , (total_velocity  / app.nbr_back_track_days).toFixed(2));
+    
+    //draw chart
+    app._drawChartStoriesAndDefects(app.data_table);
+    app.setLoading(false);  
+  },
+  
+  _drawChartPortfolioItems: function(data_table, html_legend){
+   var app = this;
+   
+    if( app.my_graph_chart){ // if my_graph_chart object does exit, get rid of it 
+        // console.log("Destroy my_graph_chart ") ;
+        app.my_graph_chart.destroy();
+    }
+    
+   // ********  set up data table 
+    var data_table_columns = ['display_date','Velocity'];
+    
+    // build stor based on result data table 
+    var store = Ext.create('Ext.data.JsonStore', {
+            fields: data_table_columns,
+            data: data_table,
+        });
+        
+        
+    // ********  set up the chart 
+    
+    // config Series 
+    var my_series =  [
+                         {
+                            type: 'column',   // bar (horizental)      column (vertical)
+                            axis: 'left',
+                            highlight: true,
+                            stacked: false,   // TBD
+                            showInLegend: true, 
+                            tips: {
+                                  trackMouse: true,
+                                  //   width: 140,
+                                  //   height: 28,
+                                  renderer: function(storeItem) {
+                                            // this.setTitle( "Throughput :" +storeItem.get('count') + ': \nVelocity: ' + storeItem.get('velocity')   );
+                                            this.setTitle( storeItem.get('Velocity')   );
+                                  }
+                                 },
+                            label: {
+                                    display: 'insideEnd', // insideEnd
+                                    field:   ['Velocity'],
+                                    renderer: Ext.util.Format.numberRenderer('10'),
+                                    orientation: 'horizontal',  //horizontal     vertical
+                                    color: 'white',
+                                    // font :'{font-weight: bold;}',
+                                    'text-anchor': 'middle'
+                                 },
+                            // listeners: {
+                            //             'afterrender': function() {
+                            //                     console.log('afterrender barchart');
+                            //               }, 
+                            //             },
+                            xField: 'display_date',
+                            yField: ['Velocity'],
+                        },
+                       {
+                            type: 'line',
+                            axis: 'left',
+                            highlight: true,
+                            xField: 'display_date',
+                            yField: 'Velocity',
+                            markerConfig: {
+                                type: 'circle',
+                                size: 3
+                            },
+                        },
+                    ];
+                    
+        var my_axes = [{ 
+                        type: 'Category',  // Time    Category
+                        position: 'bottom',  // left   bottom
+                        fields: ['display_date'],
+                        title: 'Months',
+                        dateFormat: 'M d',  // 'ga'
+                        label: {
+                                rotate: { degrees: 315 }
+                               },
+                        // grid: {
+                        //     odd: {
+                        //         opacity: 1,
+                        //         fill: '#ddd',
+                        //         stroke: '#bbb',
+                        //         'stroke-width': 1
+                        //     }
+                        // },     
+                    }, { 
+                      type: 'Numeric',
+                        position: 'left', // left    bottom  
+                        fields: ['Velocity'],
+                        stacked:true, 
+                        label: { renderer: Ext.util.Format.numberRenderer('0,0') },
+                        title: 'Plan Estimates',
+                        grid: true,
+                        minimum: 0
+                    }];        
+ 
+    // Create Chart
+     app.my_graph_chart = Ext.create('Ext.chart.Chart', {
+            renderTo: Ext.getBody(),
+            width: 600,
+            height: 400,
+            animate: true,
+            store: store,
+            axes: my_axes, 
+            series:my_series, 
+            legend: {
+                position: 'bottom',
+            },
+        });  
+        
+        app._addLegend(html_legend);
+        app.add(app.my_graph_chart); 
+        
+       
+    },
+    
+  _drawChartStoriesAndDefects: function(data_table, html_legend){
+   var app = this;
+   
+    if( app.my_graph_chart){ // if my_graph_chart object does exit, get rid of it 
+        // console.log("Destroy my_graph_chart ") ;
+        app.my_graph_chart.destroy();
+    }
+    
+   // ********  set up data table 
+    var data_table_columns = ['display_date','Stories', 'Defects','Total'];
+    
+    // build stor based on result data table 
+    var store = Ext.create('Ext.data.JsonStore', {
+            fields: data_table_columns,
+            data: data_table,
+        });
+        
+        
+    // ********  set up the chart 
+    
+    // config Series 
+    var my_series =  [
+                         {
+                            type: 'column',   // bar (horizental)      column (vertical)
+                            axis: 'left',
+                            highlight: true,
+                            stacked: true,   // TBD
+                            showInLegend: true, 
+                            tips: {
+                                  trackMouse: true,
+                                  //   width: 140,
+                                  //   height: 28,
+                                  renderer: function(storeItem) {
+                                            // this.setTitle( "Throughput :" +storeItem.get('count') + ': \nVelocity: ' + storeItem.get('velocity')   );
+                                            this.setTitle("Stories: " +  storeItem.get('Stories') + "  Defects: " +  storeItem.get('Defects')     );
+                                  }
+                                 },
+                            label: {
+                                    display: 'insideEnd', // insideEnd
+                                    field:   ['Stories','Defects','Total'],
+                                    renderer: Ext.util.Format.numberRenderer('10'),
+                                    orientation: 'horizontal',  //horizontal     vertical
+                                    color: 'white',
+                                    // font :'{font-weight: bold;}',
+                                    'text-anchor': 'middle'
+                                 },
+                            // listeners: {
+                            //             'afterrender': function() {
+                            //                     console.log('afterrender barchart');
+                            //               }, 
+                            //             },
+                            xField: 'display_date',
+                            yField: ['Stories','Defects'],
+                        },
+                    //   {
+                    //         type: 'line',
+                    //         axis: 'left',
+                    //         highlight: true,
+                    //         xField: 'display_date',
+                    //         yField: 'Stories',
+                    //         markerConfig: {
+                    //             type: 'circle',
+                    //             size: 3
+                    //         },
+                    //     },
+                    //   {
+                        //     type: 'line',
+                        //     axis: 'left',
+                        //     highlight: true,
+                        //     xField: 'display_date',
+                        //     yField: 'Defects',
+                        //     markerConfig: {
+                        //         type: 'circle',
+                        //         size: 3
+                        //     },
+                        // },
+                       {
+                            type: 'line',
+                            axis: 'left',
+                            highlight: true,
+                            xField: 'display_date',
+                            yField: 'Total',
+                            markerConfig: {
+                                type: 'circle',
+                                size: 3
+                            },
+                        },
+                    ];
+                    
+        var my_axes = [{ 
+                        type: 'Category',  // Time    Category
+                        position: 'bottom',  // left   bottom
+                        fields: ['display_date'],
+                        title: 'Months',
+                        dateFormat: 'M d',  // 'ga'
+                        label: {
+                                rotate: { degrees: 315 }
+                               },
+                        // grid: {
+                        //     odd: {
+                        //         opacity: 1,
+                        //         fill: '#ddd',
+                        //         stroke: '#bbb',
+                        //         'stroke-width': 1
+                        //     }
+                        // },     
+                    }, { 
+                      type: 'Numeric',
+                        position: 'left', // left    bottom  
+                        fields: ['Stories','Defects','Total'],
+                        stacked:true, 
+                        label: { renderer: Ext.util.Format.numberRenderer('0,0') },
+                        title: 'Plan Estimates',
+                        grid: true,
+                        minimum: 0
+                    }];        
+ 
+    // Create Chart
+     app.my_graph_chart = Ext.create('Ext.chart.Chart', {
+            renderTo: Ext.getBody(),
+            width: 600,
+            height: 400,
+            animate: true,
+            store: store,
+            axes: my_axes, 
+            series:my_series, 
+            legend: {
+                position: 'bottom',
+            },
+        });  
+        
+        app._addLegend(html_legend);
+        app.add(app.my_graph_chart); 
+        
+       
+    },
+    
+  _drawChartTemplate: function(){
+   var app = this;
+      
+     if( app.my_graph_chart){ // if my_graph_chart object does exit, get rid of it 
+        console.log("Destroy my_graph_chart ") ;
+        app.my_graph_chart.destroy();
+    }
+    
+    // if (typeof app.my_graph_chart !== "undefined") {
+    //       console.log("Destroy my_graph_chart ") ;
+    //         app.my_graph_chart.destroy();
+    //     }
+        
+   // ********  set up data table  
+
+  var data_table =  [
+                        { 'iteration': 'sprint one',   'team1': 18, 'team2': 12, 'sum': 12  ,'mean': 30},
+                        { 'iteration': 'sprint two',   'team1': 24,  'team2': 22,  'sum': 22 ,'mean': 46},
+                        { 'iteration': 'sprint three', 'team1': 15,  'team2': 12,  'sum': 12   ,'mean': 27},
+                        { 'iteration': 'sprint four',  'team1': 12,  'team2': 14, 'sum': 12  ,'mean': 26},
+                        { 'iteration': 'sprint five',  'team1': 27, 'team2': 38, 'sum': 27     ,'mean': 65},
+                    ];
+    var data_table_columns = ['iteration', 'team1', 'team2','sum','mean'];
+    
+    // build stor based on result data table 
+    var store = Ext.create('Ext.data.JsonStore', {
+            fields: data_table_columns,
+            data: data_table,
+        });
+        
+        
+    // ********  set up the chart 
+    
+    // config Series 
+    var my_series =  [
+                         {
+                            type: 'column',   // bar (horizental)      column (vertical)
+                            axis: 'left',
+                            highlight: true,
+                            // stacked: true,   // TBD
+                            // showInLegend: true, 
+                            // tips: {
+                            //       trackMouse: true,
+                            //     //   width: 140,
+                            //       //   height: 28,
+                            //       renderer: function() {
+                            //         //   console.log(item);
+                            //     //   this.setTitle(storeItem.get('name') + ': ' + storeItem.get('data') + ' adil'  );
+                            //       }
+                            //      },
+                            label: {
+                                    display: 'insideEnd',
+                                    field:   ['team1', 'team2'],
+                                    renderer: Ext.util.Format.numberRenderer('10'),
+                                    orientation: 'horizontal',  //horizontal     vertical
+                                    color: 'black',
+                                    // font :'{font-weight: bold;}',
+                                    'text-anchor': 'middle'
+                                 },
+                            // listeners: {
+                            //             'afterrender': function() {
+                            //                     console.log('afterrender barchart');
+                            //               }, 
+                            //             },
+                            xField: 'iteration',
+                            yField: ['team1', 'team2'],
+                        },
+                        {
+                            type: 'line',
+                            axis: 'left',
+                            highlight: true,
+                            xField: 'iteration',
+                            yField: 'sum',
+                            markerConfig: {
+                                type: 'circle',
+                                size: 3
+                            }
+                        },
+
+                         {
+                            type: 'line',
+                            axis: 'left',
+                            highlight: true,
+                            xField: 'iteration',
+                            yField: 'mean',
+                            markerConfig: {
+                                type: 'circle',
+                                size: 3
+                            }
+                        },
+                    
+                    ];
+                    
+        var my_axes = [{ 
+                        type: 'Category',
+                        position: 'bottom',  // left   bottom
+                        fields: ['iteration'],
+                        title: 'Sample Metrics'
+                    }, { 
+                      type: 'Numeric',
+                        position: 'left', // left    bottom  
+                        fields: ['team1', 'team2','sum','mean'],
+                        stacked:true, 
+                        label: { renderer: Ext.util.Format.numberRenderer('0,0') },
+                        title: 'Sample Values',
+                        grid: true,
+                        minimum: 0
+                    }];        
+ 
+    // Create Chart
+       app.my_graph_chart = Ext.create('Ext.chart.Chart', {
+            renderTo: Ext.getBody(),
+            width: 600,
+            height: 400,
+            animate: true,
+            store: store,
+            axes: my_axes, 
+            series:my_series, 
+            legend: {
+                position: 'top'
+            },
+        });  
+        
+        app.add(app.my_graph_chart); 
+    },
+
+  _addLegend: function(html_legend){
+    var app = this;
+    app.legend = Ext.create('Ext.form.Panel', {
+                title: html_legend,
+         });
+         
+     app.add(app.legend);  
+     
+
+
+  },
+ 
+});
+
+
+            Rally.launchApp('CustomApp', {
+                name:"aggreagated_velocity",
+	            parentRepos:""
+            });
+
+        });
+    </script>
+
+
+
+    <style type="text/css">
+        .app {
+  /* Add app styles here */
+}
+
+    </style>
+</head>
+<body>
+</body>
+</html>

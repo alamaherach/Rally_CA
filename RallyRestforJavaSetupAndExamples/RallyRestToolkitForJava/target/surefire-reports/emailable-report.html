@@ -1,0 +1,434 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>TestNG:  Unit Test</title>
+<style type="text/css">
+table caption,table.info_table,table.param,table.passed,table.failed {margin-bottom:10px;border:1px solid #000099;border-collapse:collapse;empty-cells:show;}
+table.info_table td,table.info_table th,table.param td,table.param th,table.passed td,table.passed th,table.failed td,table.failed th {
+border:1px solid #000099;padding:.25em .5em .25em .5em
+}
+table.param th {vertical-align:bottom}
+td.numi,th.numi,td.numi_attn {
+text-align:right
+}
+tr.total td {font-weight:bold}
+table caption {
+text-align:center;font-weight:bold;
+}
+table.passed tr.stripe td,table tr.passedodd td {background-color: #00AA00;}
+table.passed td,table tr.passedeven td {background-color: #33FF33;}
+table.passed tr.stripe td,table tr.skippedodd td {background-color: #cccccc;}
+table.passed td,table tr.skippedodd td {background-color: #dddddd;}
+table.failed tr.stripe td,table tr.failedodd td,table.param td.numi_attn {background-color: #FF3333;}
+table.failed td,table tr.failedeven td,table.param tr.stripe td.numi_attn {background-color: #DD0000;}
+tr.stripe td,tr.stripe th {background-color: #E6EBF9;}
+p.totop {font-size:85%;text-align:center;border-bottom:2px black solid}
+div.shootout {padding:2em;border:3px #4854A8 solid}
+</style>
+</head>
+<body>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th>Test</th><th class="numi">Methods<br/>Passed</th><th class="numi">Scenarios<br/>Passed</th><th class="numi"># skipped</th><th class="numi"># failed</th><th class="numi">Total<br/>Time</th><th class="numi">Included<br/>Groups</th><th class="numi">Excluded<br/>Groups</th></tr>
+<tr><td style="text-align:left;padding-right:2em">Command line test</td><td class="numi">131</td><td class="numi">131</td><td class="numi">0</td><td class="numi">0</td><td class="numi">2.3 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+</table>
+<a id="summary"></a>
+<table cellspacing=0 cellpadding=0 class="passed">
+<tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Time<br/>(Msecs)</th></tr>
+<tr><th colspan="4">Command line test &#8212; passed</th></tr>
+<tr class="passedodd"><td rowspan="2">com.rallydev.rest.util.RefTest<td><a href="#m1"><b>shouldSupportCollectionRefs</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr><tr class="passedodd"><td><a href="#m2"><b>shouldReturnNullRelativeRefs</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.client.HttpClientTest<td><a href="#m3"><b>shouldSetWsapiVersion</b>  </a></td><td class="numi">1</td><td class="numi">160</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.RallyRestApiTest<td><a href="#m4"><b>shouldQuerySomePagesWithNonStandardStart</b>  </a></td><td class="numi">1</td><td class="numi">2</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.client.HttpClientTest<td><a href="#m5"><b>shouldExplodeWithInvalidResponse</b>  </a></td><td class="numi">1</td><td class="numi">91</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.RallyRestApiTest<td><a href="#m6"><b>shouldQueryAllPages</b>  </a></td><td class="numi">1</td><td class="numi">7</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.client.HttpClientTest<td><a href="#m7"><b>shouldReturnValidResponse</b>  </a></td><td class="numi">1</td><td class="numi">2</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.request.QueryRequestTest<td><a href="#m8"><b>shouldCreateCorrectQueryWithPageSize</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.client.HttpClientTest<td><a href="#m9"><b>shouldSetApplicationName</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.util.QueryFilterTest<td><a href="#m10"><b>shouldCreateCorrectAndedQuery</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.util.RefTest<td><a href="#m11"><b>shouldReturnOidsFromDynatypeRefs</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.client.HttpClientTest<td><a href="#m12"><b>shouldGet</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.RallyRestApiTest<td><a href="#m13"><b>shouldQueryOnePage</b>  </a></td><td class="numi">1</td><td class="numi">2</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.response.UpdateResponseTest<td><a href="#m14"><b>shouldReturnErrors</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.util.RefTest<td><a href="#m15"><b>shouldReturnOidsFromRefs</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.response.QueryResponseTest<td><a href="#m16"><b>shouldReturnNoErrors</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.util.FetchTest<td><a href="#m17"><b>shouldBeAbleToAddRemoveFetch</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedodd"><td rowspan="3">com.rallydev.rest.request.QueryRequestTest<td><a href="#m18"><b>shouldCreateCorrectUrlForUser</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr><tr class="passedodd"><td><a href="#m19"><b>shouldCreateCorrectUrlForCollection</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr><tr class="passedodd"><td><a href="#m20"><b>shouldCreateCorrectQueryWithStart</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.util.QueryFilterTest<td><a href="#m21"><b>shouldCreateCorrectQueryForString</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.RallyRestApiTest<td><a href="#m22"><b>shouldGetWsapiVersion</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.util.RefTest<td><a href="#m23"><b>shouldSupportWsapiVersionXinRefs</b>  </a></td><td class="numi">1</td><td class="numi">2</td></tr>
+<tr class="passedodd"><td rowspan="2">com.rallydev.rest.client.BasicAuthClientTest<td><a href="#m24"><b>shouldIncludeCSRFTokenOnDelete</b>  </a></td><td class="numi">1</td><td class="numi">60</td></tr><tr class="passedodd"><td><a href="#m25"><b>shouldRequestCSRFToken</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.RallyRestApiTest<td><a href="#m26"><b>shouldSetVersion</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.util.QueryFilterTest<td><a href="#m27"><b>shouldCreateCorrectStaticOredQuery</b>  </a></td><td class="numi">1</td><td class="numi">2</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.RallyRestApiTest<td><a href="#m28"><b>shouldSetWsapiVersion</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.client.HttpClientTest<td><a href="#m29"><b>shouldIntialize</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.response.CollectionUpdateResponseTest<td><a href="#m30"><b>shouldReturnResults</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.RallyRestApiTest<td><a href="#m31"><b>shouldQueryNoPages</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.response.CreateResponseTest<td><a href="#m32"><b>shouldReturnCreatedObject</b>  </a></td><td class="numi">1</td><td class="numi">2</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.util.QueryFilterTest<td><a href="#m33"><b>shouldCreateCorrectQueryForNull</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.RallyRestApiTest<td><a href="#m34"><b>shouldInitializeBasicAuthClient</b>  </a></td><td class="numi">1</td><td class="numi">4</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.response.QueryResponseTest<td><a href="#m35"><b>shouldReturnResults</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.RallyRestApiTest<td><a href="#m36"><b>shouldSetName</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.request.CollectionUpdateRequestTest<td><a href="#m37"><b>shouldConstructTheCorrectUrlForRemoves</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.request.GetRequestTest<td><a href="#m38"><b>shouldReturnCorrectUrlWithRelativeRef</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.request.CreateRequestTest<td><a href="#m39"><b>shouldEncodeParamsUsingUtf8</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.util.RefTest<td><a href="#m40"><b>shouldDetectValidRefs</b>  </a></td><td class="numi">1</td><td class="numi">2</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.request.UpdateRequestTest<td><a href="#m41"><b>shouldCreateACorrectBodyWithNullFieldsByDefault</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.client.HttpClientTest<td><a href="#m42"><b>shouldPost</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.RallyRestApiTest<td><a href="#m43"><b>shouldInitializeApiKeyClient</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.response.ResponseTest<td><a href="#m44"><b>shouldReturnNoErrors</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.request.QueryRequestTest<td><a href="#m45"><b>shouldCreateCorrectDefaultQueryWithExtraParam</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.client.HttpClientTest<td><a href="#m46"><b>shouldPut</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.request.UpdateRequestTest<td><a href="#m47"><b>shouldConstructTheCorrectDefaultFetchUrl</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.util.FetchTest<td><a href="#m48"><b>shouldProvideCorrectFetch</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.util.QueryFilterTest<td><a href="#m49"><b>shouldCreateCorrectQueryForRef</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.response.UpdateResponseTest<td><a href="#m50"><b>shouldReturnUpdatedObject</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.request.UpdateRequestTest<td><a href="#m51"><b>shouldCreateACorrectBody</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.RallyRestApiTest<td><a href="#m52"><b>shouldClose</b>  </a></td><td class="numi">1</td><td class="numi">523</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.client.HttpClientTest<td><a href="#m53"><b>shouldGzip</b>  </a></td><td class="numi">1</td><td class="numi">6</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.RallyRestApiTest<td><a href="#m54"><b>shouldSetProxy</b>  </a></td><td class="numi">1</td><td class="numi">40</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.request.UpdateRequestTest<td><a href="#m55"><b>shouldConstructTheCorrectUrl</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.client.BasicAuthClientTest<td><a href="#m56"><b>shouldNotIncludeCSRFTokenOnWsapiv1</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.RallyRestApiTest<td><a href="#m57"><b>shouldGet</b>  </a></td><td class="numi">1</td><td class="numi">2</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.util.QueryFilterTest<td><a href="#m58"><b>shouldCreateCorrectQueryForNumber</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.request.CollectionUpdateRequestTest<td><a href="#m59"><b>shouldCreateACorrectBody</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.response.GetResponseTest<td><a href="#m60"><b>shouldReturnNoErrors</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.client.BasicAuthClientTest<td><a href="#m61"><b>shouldIncludeCSRFTokenOnPut</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.request.DeleteRequestTest<td><a href="#m62"><b>shouldConstructCorrectUrlWithExtraParam</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.RallyRestApiTest<td><a href="#m63"><b>shouldDelete</b>  </a></td><td class="numi">1</td><td class="numi">4</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.util.RefTest<td><a href="#m64"><b>shouldReturnTypesFromDynatypeRefs</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.request.GetRequestTest<td><a href="#m65"><b>shouldReturnCorrectUrlWithFetchParams</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.client.BasicAuthClientTest<td><a href="#m66"><b>shouldIncludeCSRFTokenOnPost</b>  </a></td><td class="numi">1</td><td class="numi">58</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.request.DeleteRequestTest<td><a href="#m67"><b>shouldConstructCorrectUrlWithRelativeRef</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.request.QueryRequestTest<td><a href="#m68"><b>shouldCloneCorrectly</b>  </a></td><td class="numi">1</td><td class="numi">15</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.util.QueryFilterTest<td><a href="#m69"><b>shouldCreateCorrectOredQuery</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.util.RefTest<td><a href="#m70"><b>shouldReturnValidDynatypeRelativeRefs</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.request.QueryRequestTest<td><a href="#m71"><b>shouldEncodeParamsUsingUtf8</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.client.BasicAuthClientTest<td><a href="#m72"><b>shouldIntialize</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.request.CreateRequestTest<td><a href="#m73"><b>shouldConstructTheCorrectUrlWithExtraParam</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.RallyRestApiTest<td><a href="#m74"><b>shouldUpdateCollection</b>  </a></td><td class="numi">1</td><td class="numi">3</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.util.RefTest<td><a href="#m75"><b>shouldDetectValidDynatypeRefs</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.request.QueryRequestTest<td><a href="#m76"><b>shouldCreateCorrectQueryWithWorkspace</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.response.DeleteResponseTest<td><a href="#m77"><b>shouldReturnNoErrors</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.util.RefTest<td><a href="#m78"><b>shouldReturnNullTypesFromRefs</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.response.CollectionUpdateResponseTest<td><a href="#m79"><b>shouldReturnNoErrors</b>  </a></td><td class="numi">1</td><td class="numi">142</td></tr>
+<tr class="passedeven"><td rowspan="2">com.rallydev.rest.client.HttpClientTest<td><a href="#m80"><b>shouldSetApplicationVersion</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr><tr class="passedeven"><td><a href="#m81"><b>shouldSetProxyWithCredentials</b>  </a></td><td class="numi">1</td><td class="numi">296</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.request.RequestTest<td><a href="#m82"><b>shouldBeAbleToAddParams</b>  </a></td><td class="numi">1</td><td class="numi">2</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.request.QueryRequestTest<td><a href="#m83"><b>shouldCreateCorrectQueryWithFetch</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.request.GetRequestTest<td><a href="#m84"><b>shouldReturnCorrectUrlForSubscription</b>  </a></td><td class="numi">1</td><td class="numi">3</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.util.RefTest<td><a href="#m85"><b>shouldReturnNullOidsFromRefs</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.request.QueryRequestTest<td><a href="#m86"><b>shouldCreateCorrectQueryWithQuery</b>  </a></td><td class="numi">1</td><td class="numi">4</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.RallyRestApiTest<td><a href="#m87"><b>shouldUpdate</b>  </a></td><td class="numi">1</td><td class="numi">4</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.request.QueryRequestTest<td><a href="#m88"><b>shouldCreateCorrectQueryWithSpecifiedOrder</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.util.RefTest<td><a href="#m89"><b>shouldSupportProjectPermissionRefs</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.request.RequestTest<td><a href="#m90"><b>shouldBeAbleToSetGsonBuilder</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.client.ApiKeyClientTest<td><a href="#m91"><b>shouldIncludeApiKeyOnRequest</b>  </a></td><td class="numi">1</td><td class="numi">19</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.response.ResponseTest<td><a href="#m92"><b>shouldReturnErrors</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.request.UpdateRequestTest<td><a href="#m93"><b>shouldConstructTheCorrectUrlWithExtraParam</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.request.CreateRequestTest<td><a href="#m94"><b>shouldConstructTheCorrectUrl</b>  </a></td><td class="numi">1</td><td class="numi">4</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.client.HttpClientTest<td><a href="#m95"><b>shouldDelete</b>  </a></td><td class="numi">1</td><td class="numi">22</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.request.CreateRequestTest<td><a href="#m96"><b>shouldConstructTheCorrectDefaultFetchUrl</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.response.ResponseTest<td><a href="#m97"><b>shouldReturnNoWarnings</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.response.GetResponseTest<td><a href="#m98"><b>shouldReturnErrors</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.util.RefTest<td><a href="#m99"><b>shouldSupportWorkspacePermissionRefs</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.request.QueryRequestTest<td><a href="#m100"><b>shouldCreateCorrectQueryWithDefaultOrder</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.RallyRestApiTest<td><a href="#m101"><b>shouldQueryAllPagesWithNonStandardStart</b>  </a></td><td class="numi">1</td><td class="numi">4</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.util.FetchTest<td><a href="#m102"><b>shouldProvideCorrectDefaultFetch</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.request.CollectionUpdateRequestTest<td><a href="#m103"><b>shouldConstructTheCorrectUrlWithExtraParam</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.RallyRestApiTest<td><a href="#m104"><b>shouldQuerySomePages</b>  </a></td><td class="numi">1</td><td class="numi">2</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.client.BasicAuthClientTest<td><a href="#m105"><b>shouldNotIncludeCSRFTokenOnGet</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.client.HttpClientTest<td><a href="#m106"><b>shouldUseDefaultWsapiVersion</b>  </a></td><td class="numi">1</td><td class="numi">105</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.request.GetRequestTest<td><a href="#m107"><b>shouldReturnCorrectUrlForUser</b>  </a></td><td class="numi">1</td><td class="numi">2</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.response.ResponseTest<td><a href="#m108"><b>shouldReturnWarnings</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.RallyRestApiTest<td><a href="#m109"><b>shouldSetVendor</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.request.QueryRequestTest<td><a href="#m110"><b>shouldCreateCorrectDefaultQuery</b>  </a></td><td class="numi">1</td><td class="numi">7</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.request.RequestTest<td><a href="#m111"><b>shouldBeAbleToSetParams</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.client.HttpClientTest<td><a href="#m112"><b>shouldSetApplicationVendor</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.util.RefTest<td><a href="#m113"><b>shouldReturnTypesFromRefs</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.util.QueryFilterTest<td><a href="#m114"><b>shouldCreateQuotedQueryForStringWithSpaces</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.response.DeleteResponseTest<td><a href="#m115"><b>shouldReturnErrors</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.request.QueryRequestTest<td><a href="#m116"><b>shouldCreateCorrectUrlForSubscription</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.request.GetRequestTest<td><a href="#m117"><b>shouldReturnCorrectUrlWithAbsoluteRef</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.RallyRestApiTest<td><a href="#m118"><b>shouldSetProxyWithCredentials</b>  </a></td><td class="numi">1</td><td class="numi">15</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.request.CreateRequestTest<td><a href="#m119"><b>shouldCreateACorrectBodyWithNullFields</b>  </a></td><td class="numi">1</td><td class="numi">6</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.request.QueryRequestTest<td><a href="#m120"><b>shouldCreateCorrectQueryWithNullProject</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.request.CollectionUpdateRequestTest<td><a href="#m121"><b>shouldConstructTheCorrectUrlForAdds</b>  </a></td><td class="numi">1</td><td class="numi">6</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.util.QueryFilterTest<td><a href="#m122"><b>shouldCreateCorrectStaticAndedQuery</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.util.RefTest<td><a href="#m123"><b>shouldDetectInvalidRefs</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.request.DeleteRequestTest<td><a href="#m124"><b>shouldConstructCorrectUrlWithAbsoluteRef</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.request.QueryRequestTest<td><a href="#m125"><b>shouldCreateCorrectQueryWithProject</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.client.ApiKeyClientTest<td><a href="#m126"><b>shouldIntialize</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.client.HttpClientTest<td><a href="#m127"><b>shouldSetProxy</b>  </a></td><td class="numi">1</td><td class="numi">2</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.RallyRestApiTest<td><a href="#m128"><b>shouldCreate</b>  </a></td><td class="numi">1</td><td class="numi">110</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.util.RefTest<td><a href="#m129"><b>shouldReturnValidRelativeRefs</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedodd"><td rowspan="1">com.rallydev.rest.response.CreateResponseTest<td><a href="#m130"><b>shouldReturnErrors</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedeven"><td rowspan="1">com.rallydev.rest.request.CreateRequestTest<td><a href="#m131"><b>shouldCreateACorrectBody</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+</table>
+<h1>Command line test</h1>
+<a id="m1"></a><h2>com.rallydev.rest.util.RefTest:shouldSupportCollectionRefs</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m2"></a><h2>com.rallydev.rest.util.RefTest:shouldReturnNullRelativeRefs</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m3"></a><h2>com.rallydev.rest.client.HttpClientTest:shouldSetWsapiVersion</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m4"></a><h2>com.rallydev.rest.RallyRestApiTest:shouldQuerySomePagesWithNonStandardStart</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m5"></a><h2>com.rallydev.rest.client.HttpClientTest:shouldExplodeWithInvalidResponse</h2>
+<div style="padding-left:3em">
+<p>Mock for StatusLine, hashCode: 59912595</p>
+com.rallydev.rest.client.HttpClient.executeRequest(HttpClient.java:163)
+<br/>at com.rallydev.rest.client.HttpClientTest.shouldExplodeWithInvalidResponse(HttpClientTest.java:151)
+<br/>36 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m6"></a><h2>com.rallydev.rest.RallyRestApiTest:shouldQueryAllPages</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m7"></a><h2>com.rallydev.rest.client.HttpClientTest:shouldReturnValidResponse</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m8"></a><h2>com.rallydev.rest.request.QueryRequestTest:shouldCreateCorrectQueryWithPageSize</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m9"></a><h2>com.rallydev.rest.client.HttpClientTest:shouldSetApplicationName</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m10"></a><h2>com.rallydev.rest.util.QueryFilterTest:shouldCreateCorrectAndedQuery</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m11"></a><h2>com.rallydev.rest.util.RefTest:shouldReturnOidsFromDynatypeRefs</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m12"></a><h2>com.rallydev.rest.client.HttpClientTest:shouldGet</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m13"></a><h2>com.rallydev.rest.RallyRestApiTest:shouldQueryOnePage</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m14"></a><h2>com.rallydev.rest.response.UpdateResponseTest:shouldReturnErrors</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m15"></a><h2>com.rallydev.rest.util.RefTest:shouldReturnOidsFromRefs</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m16"></a><h2>com.rallydev.rest.response.QueryResponseTest:shouldReturnNoErrors</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m17"></a><h2>com.rallydev.rest.util.FetchTest:shouldBeAbleToAddRemoveFetch</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m18"></a><h2>com.rallydev.rest.request.QueryRequestTest:shouldCreateCorrectUrlForUser</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m19"></a><h2>com.rallydev.rest.request.QueryRequestTest:shouldCreateCorrectUrlForCollection</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m20"></a><h2>com.rallydev.rest.request.QueryRequestTest:shouldCreateCorrectQueryWithStart</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m21"></a><h2>com.rallydev.rest.util.QueryFilterTest:shouldCreateCorrectQueryForString</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m22"></a><h2>com.rallydev.rest.RallyRestApiTest:shouldGetWsapiVersion</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m23"></a><h2>com.rallydev.rest.util.RefTest:shouldSupportWsapiVersionXinRefs</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m24"></a><h2>com.rallydev.rest.client.BasicAuthClientTest:shouldIncludeCSRFTokenOnDelete</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m25"></a><h2>com.rallydev.rest.client.BasicAuthClientTest:shouldRequestCSRFToken</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m26"></a><h2>com.rallydev.rest.RallyRestApiTest:shouldSetVersion</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m27"></a><h2>com.rallydev.rest.util.QueryFilterTest:shouldCreateCorrectStaticOredQuery</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m28"></a><h2>com.rallydev.rest.RallyRestApiTest:shouldSetWsapiVersion</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m29"></a><h2>com.rallydev.rest.client.HttpClientTest:shouldIntialize</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m30"></a><h2>com.rallydev.rest.response.CollectionUpdateResponseTest:shouldReturnResults</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m31"></a><h2>com.rallydev.rest.RallyRestApiTest:shouldQueryNoPages</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m32"></a><h2>com.rallydev.rest.response.CreateResponseTest:shouldReturnCreatedObject</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m33"></a><h2>com.rallydev.rest.util.QueryFilterTest:shouldCreateCorrectQueryForNull</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m34"></a><h2>com.rallydev.rest.RallyRestApiTest:shouldInitializeBasicAuthClient</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m35"></a><h2>com.rallydev.rest.response.QueryResponseTest:shouldReturnResults</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m36"></a><h2>com.rallydev.rest.RallyRestApiTest:shouldSetName</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m37"></a><h2>com.rallydev.rest.request.CollectionUpdateRequestTest:shouldConstructTheCorrectUrlForRemoves</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m38"></a><h2>com.rallydev.rest.request.GetRequestTest:shouldReturnCorrectUrlWithRelativeRef</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m39"></a><h2>com.rallydev.rest.request.CreateRequestTest:shouldEncodeParamsUsingUtf8</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m40"></a><h2>com.rallydev.rest.util.RefTest:shouldDetectValidRefs</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m41"></a><h2>com.rallydev.rest.request.UpdateRequestTest:shouldCreateACorrectBodyWithNullFieldsByDefault</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m42"></a><h2>com.rallydev.rest.client.HttpClientTest:shouldPost</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m43"></a><h2>com.rallydev.rest.RallyRestApiTest:shouldInitializeApiKeyClient</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m44"></a><h2>com.rallydev.rest.response.ResponseTest:shouldReturnNoErrors</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m45"></a><h2>com.rallydev.rest.request.QueryRequestTest:shouldCreateCorrectDefaultQueryWithExtraParam</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m46"></a><h2>com.rallydev.rest.client.HttpClientTest:shouldPut</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m47"></a><h2>com.rallydev.rest.request.UpdateRequestTest:shouldConstructTheCorrectDefaultFetchUrl</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m48"></a><h2>com.rallydev.rest.util.FetchTest:shouldProvideCorrectFetch</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m49"></a><h2>com.rallydev.rest.util.QueryFilterTest:shouldCreateCorrectQueryForRef</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m50"></a><h2>com.rallydev.rest.response.UpdateResponseTest:shouldReturnUpdatedObject</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m51"></a><h2>com.rallydev.rest.request.UpdateRequestTest:shouldCreateACorrectBody</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m52"></a><h2>com.rallydev.rest.RallyRestApiTest:shouldClose</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m53"></a><h2>com.rallydev.rest.client.HttpClientTest:shouldGzip</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m54"></a><h2>com.rallydev.rest.RallyRestApiTest:shouldSetProxy</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m55"></a><h2>com.rallydev.rest.request.UpdateRequestTest:shouldConstructTheCorrectUrl</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m56"></a><h2>com.rallydev.rest.client.BasicAuthClientTest:shouldNotIncludeCSRFTokenOnWsapiv1</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m57"></a><h2>com.rallydev.rest.RallyRestApiTest:shouldGet</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m58"></a><h2>com.rallydev.rest.util.QueryFilterTest:shouldCreateCorrectQueryForNumber</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m59"></a><h2>com.rallydev.rest.request.CollectionUpdateRequestTest:shouldCreateACorrectBody</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m60"></a><h2>com.rallydev.rest.response.GetResponseTest:shouldReturnNoErrors</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m61"></a><h2>com.rallydev.rest.client.BasicAuthClientTest:shouldIncludeCSRFTokenOnPut</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m62"></a><h2>com.rallydev.rest.request.DeleteRequestTest:shouldConstructCorrectUrlWithExtraParam</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m63"></a><h2>com.rallydev.rest.RallyRestApiTest:shouldDelete</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m64"></a><h2>com.rallydev.rest.util.RefTest:shouldReturnTypesFromDynatypeRefs</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m65"></a><h2>com.rallydev.rest.request.GetRequestTest:shouldReturnCorrectUrlWithFetchParams</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m66"></a><h2>com.rallydev.rest.client.BasicAuthClientTest:shouldIncludeCSRFTokenOnPost</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m67"></a><h2>com.rallydev.rest.request.DeleteRequestTest:shouldConstructCorrectUrlWithRelativeRef</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m68"></a><h2>com.rallydev.rest.request.QueryRequestTest:shouldCloneCorrectly</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m69"></a><h2>com.rallydev.rest.util.QueryFilterTest:shouldCreateCorrectOredQuery</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m70"></a><h2>com.rallydev.rest.util.RefTest:shouldReturnValidDynatypeRelativeRefs</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m71"></a><h2>com.rallydev.rest.request.QueryRequestTest:shouldEncodeParamsUsingUtf8</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m72"></a><h2>com.rallydev.rest.client.BasicAuthClientTest:shouldIntialize</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m73"></a><h2>com.rallydev.rest.request.CreateRequestTest:shouldConstructTheCorrectUrlWithExtraParam</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m74"></a><h2>com.rallydev.rest.RallyRestApiTest:shouldUpdateCollection</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m75"></a><h2>com.rallydev.rest.util.RefTest:shouldDetectValidDynatypeRefs</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m76"></a><h2>com.rallydev.rest.request.QueryRequestTest:shouldCreateCorrectQueryWithWorkspace</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m77"></a><h2>com.rallydev.rest.response.DeleteResponseTest:shouldReturnNoErrors</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m78"></a><h2>com.rallydev.rest.util.RefTest:shouldReturnNullTypesFromRefs</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m79"></a><h2>com.rallydev.rest.response.CollectionUpdateResponseTest:shouldReturnNoErrors</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m80"></a><h2>com.rallydev.rest.client.HttpClientTest:shouldSetApplicationVersion</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m81"></a><h2>com.rallydev.rest.client.HttpClientTest:shouldSetProxyWithCredentials</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m82"></a><h2>com.rallydev.rest.request.RequestTest:shouldBeAbleToAddParams</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m83"></a><h2>com.rallydev.rest.request.QueryRequestTest:shouldCreateCorrectQueryWithFetch</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m84"></a><h2>com.rallydev.rest.request.GetRequestTest:shouldReturnCorrectUrlForSubscription</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m85"></a><h2>com.rallydev.rest.util.RefTest:shouldReturnNullOidsFromRefs</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m86"></a><h2>com.rallydev.rest.request.QueryRequestTest:shouldCreateCorrectQueryWithQuery</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m87"></a><h2>com.rallydev.rest.RallyRestApiTest:shouldUpdate</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m88"></a><h2>com.rallydev.rest.request.QueryRequestTest:shouldCreateCorrectQueryWithSpecifiedOrder</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m89"></a><h2>com.rallydev.rest.util.RefTest:shouldSupportProjectPermissionRefs</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m90"></a><h2>com.rallydev.rest.request.RequestTest:shouldBeAbleToSetGsonBuilder</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m91"></a><h2>com.rallydev.rest.client.ApiKeyClientTest:shouldIncludeApiKeyOnRequest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m92"></a><h2>com.rallydev.rest.response.ResponseTest:shouldReturnErrors</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m93"></a><h2>com.rallydev.rest.request.UpdateRequestTest:shouldConstructTheCorrectUrlWithExtraParam</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m94"></a><h2>com.rallydev.rest.request.CreateRequestTest:shouldConstructTheCorrectUrl</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m95"></a><h2>com.rallydev.rest.client.HttpClientTest:shouldDelete</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m96"></a><h2>com.rallydev.rest.request.CreateRequestTest:shouldConstructTheCorrectDefaultFetchUrl</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m97"></a><h2>com.rallydev.rest.response.ResponseTest:shouldReturnNoWarnings</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m98"></a><h2>com.rallydev.rest.response.GetResponseTest:shouldReturnErrors</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m99"></a><h2>com.rallydev.rest.util.RefTest:shouldSupportWorkspacePermissionRefs</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m100"></a><h2>com.rallydev.rest.request.QueryRequestTest:shouldCreateCorrectQueryWithDefaultOrder</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m101"></a><h2>com.rallydev.rest.RallyRestApiTest:shouldQueryAllPagesWithNonStandardStart</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m102"></a><h2>com.rallydev.rest.util.FetchTest:shouldProvideCorrectDefaultFetch</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m103"></a><h2>com.rallydev.rest.request.CollectionUpdateRequestTest:shouldConstructTheCorrectUrlWithExtraParam</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m104"></a><h2>com.rallydev.rest.RallyRestApiTest:shouldQuerySomePages</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m105"></a><h2>com.rallydev.rest.client.BasicAuthClientTest:shouldNotIncludeCSRFTokenOnGet</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m106"></a><h2>com.rallydev.rest.client.HttpClientTest:shouldUseDefaultWsapiVersion</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m107"></a><h2>com.rallydev.rest.request.GetRequestTest:shouldReturnCorrectUrlForUser</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m108"></a><h2>com.rallydev.rest.response.ResponseTest:shouldReturnWarnings</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m109"></a><h2>com.rallydev.rest.RallyRestApiTest:shouldSetVendor</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m110"></a><h2>com.rallydev.rest.request.QueryRequestTest:shouldCreateCorrectDefaultQuery</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m111"></a><h2>com.rallydev.rest.request.RequestTest:shouldBeAbleToSetParams</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m112"></a><h2>com.rallydev.rest.client.HttpClientTest:shouldSetApplicationVendor</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m113"></a><h2>com.rallydev.rest.util.RefTest:shouldReturnTypesFromRefs</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m114"></a><h2>com.rallydev.rest.util.QueryFilterTest:shouldCreateQuotedQueryForStringWithSpaces</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m115"></a><h2>com.rallydev.rest.response.DeleteResponseTest:shouldReturnErrors</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m116"></a><h2>com.rallydev.rest.request.QueryRequestTest:shouldCreateCorrectUrlForSubscription</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m117"></a><h2>com.rallydev.rest.request.GetRequestTest:shouldReturnCorrectUrlWithAbsoluteRef</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m118"></a><h2>com.rallydev.rest.RallyRestApiTest:shouldSetProxyWithCredentials</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m119"></a><h2>com.rallydev.rest.request.CreateRequestTest:shouldCreateACorrectBodyWithNullFields</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m120"></a><h2>com.rallydev.rest.request.QueryRequestTest:shouldCreateCorrectQueryWithNullProject</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m121"></a><h2>com.rallydev.rest.request.CollectionUpdateRequestTest:shouldConstructTheCorrectUrlForAdds</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m122"></a><h2>com.rallydev.rest.util.QueryFilterTest:shouldCreateCorrectStaticAndedQuery</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m123"></a><h2>com.rallydev.rest.util.RefTest:shouldDetectInvalidRefs</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m124"></a><h2>com.rallydev.rest.request.DeleteRequestTest:shouldConstructCorrectUrlWithAbsoluteRef</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m125"></a><h2>com.rallydev.rest.request.QueryRequestTest:shouldCreateCorrectQueryWithProject</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m126"></a><h2>com.rallydev.rest.client.ApiKeyClientTest:shouldIntialize</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m127"></a><h2>com.rallydev.rest.client.HttpClientTest:shouldSetProxy</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m128"></a><h2>com.rallydev.rest.RallyRestApiTest:shouldCreate</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m129"></a><h2>com.rallydev.rest.util.RefTest:shouldReturnValidRelativeRefs</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m130"></a><h2>com.rallydev.rest.response.CreateResponseTest:shouldReturnErrors</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m131"></a><h2>com.rallydev.rest.request.CreateRequestTest:shouldCreateACorrectBody</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+</body></html>

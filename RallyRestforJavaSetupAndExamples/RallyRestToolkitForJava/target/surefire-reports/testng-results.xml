@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="131" passed="131">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Command line suite" duration-ms="2255" started-at="2018-07-22T21:20:08Z" finished-at="2018-07-22T21:20:10Z">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="2255" started-at="2018-07-22T21:20:08Z" finished-at="2018-07-22T21:20:10Z">
+      <class name="com.rallydev.rest.client.ApiKeyClientTest">
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="1" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldIncludeApiKeyOnRequest()" name="shouldIncludeApiKeyOnRequest" duration-ms="19" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldIntialize()" name="shouldIntialize" duration-ms="1" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+      </class>
+      <class name="com.rallydev.rest.util.QueryFilterTest">
+        <test-method status="PASS" signature="shouldCreateCorrectOredQuery()" name="shouldCreateCorrectOredQuery" duration-ms="1" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldCreateCorrectAndedQuery()" name="shouldCreateCorrectAndedQuery" duration-ms="0" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldCreateCorrectQueryForNumber()" name="shouldCreateCorrectQueryForNumber" duration-ms="0" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldCreateCorrectQueryForNull()" name="shouldCreateCorrectQueryForNull" duration-ms="0" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldCreateCorrectQueryForRef()" name="shouldCreateCorrectQueryForRef" duration-ms="1" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldCreateCorrectQueryForString()" name="shouldCreateCorrectQueryForString" duration-ms="0" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldCreateCorrectStaticAndedQuery()" name="shouldCreateCorrectStaticAndedQuery" duration-ms="1" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldCreateCorrectStaticOredQuery()" name="shouldCreateCorrectStaticOredQuery" duration-ms="2" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldCreateQuotedQueryForStringWithSpaces()" name="shouldCreateQuotedQueryForStringWithSpaces" duration-ms="0" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+      </class>
+      <class name="com.rallydev.rest.response.UpdateResponseTest">
+        <test-method status="PASS" signature="shouldReturnErrors()" name="shouldReturnErrors" duration-ms="1" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldReturnUpdatedObject()" name="shouldReturnUpdatedObject" duration-ms="1" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+      </class>
+      <class name="com.rallydev.rest.request.CreateRequestTest">
+        <test-method status="PASS" signature="shouldConstructTheCorrectUrl()" name="shouldConstructTheCorrectUrl" duration-ms="4" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldConstructTheCorrectDefaultFetchUrl()" name="shouldConstructTheCorrectDefaultFetchUrl" duration-ms="0" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldConstructTheCorrectUrlWithExtraParam()" name="shouldConstructTheCorrectUrlWithExtraParam" duration-ms="0" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldCreateACorrectBody()" name="shouldCreateACorrectBody" duration-ms="0" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldCreateACorrectBodyWithNullFields()" name="shouldCreateACorrectBodyWithNullFields" duration-ms="6" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldEncodeParamsUsingUtf8()" name="shouldEncodeParamsUsingUtf8" duration-ms="0" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+      </class>
+      <class name="com.rallydev.rest.response.DeleteResponseTest">
+        <test-method status="PASS" signature="shouldReturnNoErrors()" name="shouldReturnNoErrors" duration-ms="0" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldReturnErrors()" name="shouldReturnErrors" duration-ms="0" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+      </class>
+      <class name="com.rallydev.rest.client.BasicAuthClientTest">
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="29" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldIncludeCSRFTokenOnDelete()" name="shouldIncludeCSRFTokenOnDelete" duration-ms="60" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="1" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldIncludeCSRFTokenOnPost()" name="shouldIncludeCSRFTokenOnPost" duration-ms="58" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="1" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldIncludeCSRFTokenOnPut()" name="shouldIncludeCSRFTokenOnPut" duration-ms="1" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="1" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldIntialize()" name="shouldIntialize" duration-ms="0" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldNotIncludeCSRFTokenOnGet()" name="shouldNotIncludeCSRFTokenOnGet" duration-ms="0" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldNotIncludeCSRFTokenOnWsapiv1()" name="shouldNotIncludeCSRFTokenOnWsapiv1" duration-ms="1" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldRequestCSRFToken()" name="shouldRequestCSRFToken" duration-ms="1" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+      </class>
+      <class name="com.rallydev.rest.util.FetchTest">
+        <test-method status="PASS" signature="shouldProvideCorrectDefaultFetch()" name="shouldProvideCorrectDefaultFetch" duration-ms="0" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldBeAbleToAddRemoveFetch()" name="shouldBeAbleToAddRemoveFetch" duration-ms="0" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldProvideCorrectFetch()" name="shouldProvideCorrectFetch" duration-ms="1" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+      </class>
+      <class name="com.rallydev.rest.response.GetResponseTest">
+        <test-method status="PASS" signature="shouldReturnErrors()" name="shouldReturnErrors" duration-ms="1" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldReturnNoErrors()" name="shouldReturnNoErrors" duration-ms="0" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+      </class>
+      <class name="com.rallydev.rest.request.UpdateRequestTest">
+        <test-method status="PASS" signature="shouldConstructTheCorrectDefaultFetchUrl()" name="shouldConstructTheCorrectDefaultFetchUrl" duration-ms="0" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldConstructTheCorrectUrl()" name="shouldConstructTheCorrectUrl" duration-ms="1" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldConstructTheCorrectUrlWithExtraParam()" name="shouldConstructTheCorrectUrlWithExtraParam" duration-ms="0" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldCreateACorrectBody()" name="shouldCreateACorrectBody" duration-ms="1" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldCreateACorrectBodyWithNullFieldsByDefault()" name="shouldCreateACorrectBodyWithNullFieldsByDefault" duration-ms="1" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+      </class>
+      <class name="com.rallydev.rest.response.CreateResponseTest">
+        <test-method status="PASS" signature="shouldReturnCreatedObject()" name="shouldReturnCreatedObject" duration-ms="2" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldReturnErrors()" name="shouldReturnErrors" duration-ms="0" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+      </class>
+      <class name="com.rallydev.rest.request.CollectionUpdateRequestTest">
+        <test-method status="PASS" signature="shouldConstructTheCorrectUrlForAdds()" name="shouldConstructTheCorrectUrlForAdds" duration-ms="6" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldConstructTheCorrectUrlForRemoves()" name="shouldConstructTheCorrectUrlForRemoves" duration-ms="1" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldConstructTheCorrectUrlWithExtraParam()" name="shouldConstructTheCorrectUrlWithExtraParam" duration-ms="0" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldCreateACorrectBody()" name="shouldCreateACorrectBody" duration-ms="0" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+      </class>
+      <class name="com.rallydev.rest.util.RefTest">
+        <test-method status="PASS" signature="shouldDetectInvalidRefs()" name="shouldDetectInvalidRefs" duration-ms="1" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldDetectValidDynatypeRefs()" name="shouldDetectValidDynatypeRefs" duration-ms="0" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldDetectValidRefs()" name="shouldDetectValidRefs" duration-ms="2" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldReturnNullOidsFromRefs()" name="shouldReturnNullOidsFromRefs" duration-ms="0" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldReturnNullTypesFromRefs()" name="shouldReturnNullTypesFromRefs" duration-ms="1" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldReturnNullRelativeRefs()" name="shouldReturnNullRelativeRefs" duration-ms="0" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldReturnOidsFromRefs()" name="shouldReturnOidsFromRefs" duration-ms="1" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldReturnOidsFromDynatypeRefs()" name="shouldReturnOidsFromDynatypeRefs" duration-ms="0" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldReturnTypesFromDynatypeRefs()" name="shouldReturnTypesFromDynatypeRefs" duration-ms="1" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldReturnTypesFromRefs()" name="shouldReturnTypesFromRefs" duration-ms="0" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldReturnValidDynatypeRelativeRefs()" name="shouldReturnValidDynatypeRelativeRefs" duration-ms="1" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldReturnValidRelativeRefs()" name="shouldReturnValidRelativeRefs" duration-ms="1" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldSupportCollectionRefs()" name="shouldSupportCollectionRefs" duration-ms="1" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldSupportProjectPermissionRefs()" name="shouldSupportProjectPermissionRefs" duration-ms="1" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldSupportWorkspacePermissionRefs()" name="shouldSupportWorkspacePermissionRefs" duration-ms="1" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldSupportWsapiVersionXinRefs()" name="shouldSupportWsapiVersionXinRefs" duration-ms="2" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+      </class>
+      <class name="com.rallydev.rest.request.QueryRequestTest">
+        <test-method status="PASS" signature="shouldCloneCorrectly()" name="shouldCloneCorrectly" duration-ms="15" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldCreateCorrectDefaultQuery()" name="shouldCreateCorrectDefaultQuery" duration-ms="7" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldCreateCorrectDefaultQueryWithExtraParam()" name="shouldCreateCorrectDefaultQueryWithExtraParam" duration-ms="0" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldCreateCorrectQueryWithDefaultOrder()" name="shouldCreateCorrectQueryWithDefaultOrder" duration-ms="1" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldCreateCorrectQueryWithFetch()" name="shouldCreateCorrectQueryWithFetch" duration-ms="0" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldCreateCorrectQueryWithNullProject()" name="shouldCreateCorrectQueryWithNullProject" duration-ms="1" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldCreateCorrectQueryWithPageSize()" name="shouldCreateCorrectQueryWithPageSize" duration-ms="0" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldCreateCorrectQueryWithProject()" name="shouldCreateCorrectQueryWithProject" duration-ms="1" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldCreateCorrectQueryWithQuery()" name="shouldCreateCorrectQueryWithQuery" duration-ms="4" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldCreateCorrectQueryWithSpecifiedOrder()" name="shouldCreateCorrectQueryWithSpecifiedOrder" duration-ms="1" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldCreateCorrectQueryWithStart()" name="shouldCreateCorrectQueryWithStart" duration-ms="1" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldCreateCorrectQueryWithWorkspace()" name="shouldCreateCorrectQueryWithWorkspace" duration-ms="1" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldCreateCorrectUrlForCollection()" name="shouldCreateCorrectUrlForCollection" duration-ms="1" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldCreateCorrectUrlForSubscription()" name="shouldCreateCorrectUrlForSubscription" duration-ms="0" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldCreateCorrectUrlForUser()" name="shouldCreateCorrectUrlForUser" duration-ms="1" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldEncodeParamsUsingUtf8()" name="shouldEncodeParamsUsingUtf8" duration-ms="0" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+      </class>
+      <class name="com.rallydev.rest.request.DeleteRequestTest">
+        <test-method status="PASS" signature="shouldConstructCorrectUrlWithAbsoluteRef()" name="shouldConstructCorrectUrlWithAbsoluteRef" duration-ms="1" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldConstructCorrectUrlWithExtraParam()" name="shouldConstructCorrectUrlWithExtraParam" duration-ms="1" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldConstructCorrectUrlWithRelativeRef()" name="shouldConstructCorrectUrlWithRelativeRef" duration-ms="0" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+      </class>
+      <class name="com.rallydev.rest.response.CollectionUpdateResponseTest">
+        <test-method status="PASS" signature="shouldReturnNoErrors()" name="shouldReturnNoErrors" duration-ms="142" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldReturnResults()" name="shouldReturnResults" duration-ms="1" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+      </class>
+      <class name="com.rallydev.rest.request.GetRequestTest">
+        <test-method status="PASS" signature="shouldReturnCorrectUrlForSubscription()" name="shouldReturnCorrectUrlForSubscription" duration-ms="3" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldReturnCorrectUrlForUser()" name="shouldReturnCorrectUrlForUser" duration-ms="2" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldReturnCorrectUrlWithAbsoluteRef()" name="shouldReturnCorrectUrlWithAbsoluteRef" duration-ms="1" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldReturnCorrectUrlWithFetchParams()" name="shouldReturnCorrectUrlWithFetchParams" duration-ms="1" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldReturnCorrectUrlWithRelativeRef()" name="shouldReturnCorrectUrlWithRelativeRef" duration-ms="1" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+      </class>
+      <class name="com.rallydev.rest.RallyRestApiTest">
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="269" started-at="2018-07-22T21:20:08Z" finished-at="2018-07-22T21:20:08Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldClose()" name="shouldClose" duration-ms="523" started-at="2018-07-22T21:20:08Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldCreate()" name="shouldCreate" duration-ms="110" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="1" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldDelete()" name="shouldDelete" duration-ms="4" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="1" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldGet()" name="shouldGet" duration-ms="2" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="1" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldGetWsapiVersion()" name="shouldGetWsapiVersion" duration-ms="0" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="1" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="1" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldInitializeApiKeyClient()" name="shouldInitializeApiKeyClient" duration-ms="0" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldInitializeBasicAuthClient()" name="shouldInitializeBasicAuthClient" duration-ms="4" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="1" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldQueryAllPages()" name="shouldQueryAllPages" duration-ms="7" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldQueryAllPagesWithNonStandardStart()" name="shouldQueryAllPagesWithNonStandardStart" duration-ms="4" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="1" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldQueryNoPages()" name="shouldQueryNoPages" duration-ms="1" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldQueryOnePage()" name="shouldQueryOnePage" duration-ms="2" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldQuerySomePages()" name="shouldQuerySomePages" duration-ms="2" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="1" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldQuerySomePagesWithNonStandardStart()" name="shouldQuerySomePagesWithNonStandardStart" duration-ms="2" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="1" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldSetName()" name="shouldSetName" duration-ms="0" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="1" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldSetProxy()" name="shouldSetProxy" duration-ms="40" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="3" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldSetProxyWithCredentials()" name="shouldSetProxyWithCredentials" duration-ms="15" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldSetVendor()" name="shouldSetVendor" duration-ms="1" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldSetVersion()" name="shouldSetVersion" duration-ms="1" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldSetWsapiVersion()" name="shouldSetWsapiVersion" duration-ms="1" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldUpdate()" name="shouldUpdate" duration-ms="4" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="1" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldUpdateCollection()" name="shouldUpdateCollection" duration-ms="3" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+      </class>
+      <class name="com.rallydev.rest.request.RequestTest">
+        <test-method status="PASS" signature="shouldBeAbleToAddParams()" name="shouldBeAbleToAddParams" duration-ms="2" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldBeAbleToSetParams()" name="shouldBeAbleToSetParams" duration-ms="1" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldBeAbleToSetGsonBuilder()" name="shouldBeAbleToSetGsonBuilder" duration-ms="0" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+      </class>
+      <class name="com.rallydev.rest.client.HttpClientTest">
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="26" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldDelete()" name="shouldDelete" duration-ms="22" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldExplodeWithInvalidResponse()" name="shouldExplodeWithInvalidResponse" duration-ms="91" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+          <exception class="java.io.IOException">
+            <message>
+              <![CDATA[Mock for StatusLine, hashCode: 59912595]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.io.IOException: Mock for StatusLine, hashCode: 59912595
+	at com.rallydev.rest.client.HttpClient.executeRequest(HttpClient.java:163)
+	at com.rallydev.rest.client.HttpClientTest.shouldExplodeWithInvalidResponse(HttpClientTest.java:151)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:673)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:842)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1166)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.runWorkers(TestRunner.java:1178)
+	at org.testng.TestRunner.privateRun(TestRunner.java:757)
+	at org.testng.TestRunner.run(TestRunner.java:608)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1158)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1083)
+	at org.testng.TestNG.run(TestNG.java:999)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:70)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:158)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:98)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:111)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+]]>
+            </full-stacktrace>
+          </exception>
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldGet()" name="shouldGet" duration-ms="1" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldGzip()" name="shouldGzip" duration-ms="6" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="1" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="2" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldIntialize()" name="shouldIntialize" duration-ms="0" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldPost()" name="shouldPost" duration-ms="1" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldPut()" name="shouldPut" duration-ms="1" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldReturnValidResponse()" name="shouldReturnValidResponse" duration-ms="2" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="1" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldSetApplicationName()" name="shouldSetApplicationName" duration-ms="0" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldSetApplicationVendor()" name="shouldSetApplicationVendor" duration-ms="0" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldSetApplicationVersion()" name="shouldSetApplicationVersion" duration-ms="1" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldSetProxy()" name="shouldSetProxy" duration-ms="2" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:09Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldSetProxyWithCredentials()" name="shouldSetProxyWithCredentials" duration-ms="296" started-at="2018-07-22T21:20:09Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="21" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldSetWsapiVersion()" name="shouldSetWsapiVersion" duration-ms="160" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="39" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldUseDefaultWsapiVersion()" name="shouldUseDefaultWsapiVersion" duration-ms="105" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+      </class>
+      <class name="com.rallydev.rest.response.ResponseTest">
+        <test-method status="PASS" signature="shouldReturnErrors()" name="shouldReturnErrors" duration-ms="1" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldReturnNoErrors()" name="shouldReturnNoErrors" duration-ms="0" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldReturnNoWarnings()" name="shouldReturnNoWarnings" duration-ms="1" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldReturnWarnings()" name="shouldReturnWarnings" duration-ms="0" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+      </class>
+      <class name="com.rallydev.rest.response.QueryResponseTest">
+        <test-method status="PASS" signature="shouldReturnNoErrors()" name="shouldReturnNoErrors" duration-ms="1" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+        <test-method status="PASS" signature="shouldReturnResults()" name="shouldReturnResults" duration-ms="0" started-at="2018-07-22T21:20:10Z" finished-at="2018-07-22T21:20:10Z">
+        </test-method>
+      </class>
+    </test>
+  </suite>
+</testng-results>

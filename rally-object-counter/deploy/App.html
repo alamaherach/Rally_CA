@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>name=ObjectCounter</title>
+
+    <script type="text/javascript" src="/apps/2.1/sdk.js"></script>
+
+    <script type="text/javascript">
+        Rally.onReady(function () {
+                Ext.define("CustomApp",{extend:"Rally.app.App",componentCls:"app",defaults:{margin:10},launch:function(){var app=this;console.log("launch: function()  printing app - this  ",app),console.log("this.getContext().getWorkspace() ",app.getContext().getWorkspace());var all_object_types={Attachment:"",BuildDefinition:"",Changeset:"",ConversationPost:"",Defect:"",DefectSuite:"",UserStory:"",Iteration:"",Milestone:"",PortfolioItem:"",PreliminaryEstimate:"",Project:"",ProjectPermission:"",Release:"",State:"",Tag:"",Task:"",TestCase:"",TestCaseResult:"",TestCaseStep:"",TestFolder:"",TestSet:"",User:""};console.log(" all_object_types (init)",all_object_types);var objects_count=_.size(all_object_types);console.log("objects_count: ",objects_count);var all_object_query_filter=app._buildQueryFilter(all_object_types,app.getContext());console.log(" all_object_query_filter ",all_object_query_filter),Ext.Object.each(all_object_types,function(object_name){app._objectCounter(all_object_types,all_object_query_filter,object_name)}),console.log(" all_object_types (counts)",all_object_types)},_objectCounter:function(all_object_types,all_object_query_filter,object_name){all_object_types.object_name="...(still loading, please wait)...",Ext.create("Rally.data.wsapi.Store",{filters:all_object_query_filter.object_name,model:object_name,autoLoad:!0,listeners:{load:function(store,records){all_object_types[object_name]=store.getTotalCount()}}})},_buildQueryFilter:function(all_object_types){var app=this,all_object_query_filter={};return Ext.Object.each(all_object_types,function(object_name){var filter="";switch(object_name){case"Attachment":all_object_query_filter[object_name]=[];break;case"BuildDefinition":all_object_query_filter[object_name]=[];break;case"Changeset":all_object_query_filter[object_name]=[];break;case"ConversationPost":all_object_query_filter[object_name]=[];break;case"Defect":all_object_query_filter[object_name]=[];break;case"DefectSuite":all_object_query_filter[object_name]=[];break;case"UserStory":all_object_query_filter[object_name]=[];break;case"Iteration":all_object_query_filter[object_name]=[];break;case"Milestone":all_object_query_filter[object_name]=[];break;case"PortfolioItem":all_object_query_filter[object_name]=[];break;case"PreliminaryEstimate":all_object_query_filter[object_name]=[];break;case"Project":all_object_query_filter[object_name]=[];break;case"ProjectPermission":filter="(Workspace = "+app.getContext().getWorkspace()._ref+")",all_object_query_filter[object_name]=Rally.data.wsapi.Filter.fromQueryString(filter);break;case"Release":all_object_query_filter[object_name]=[];break;case"State":all_object_query_filter[object_name]=[];break;case"Tag":all_object_query_filter[object_name]=[];break;case"Task":all_object_query_filter[object_name]=[];break;case"TestCase":all_object_query_filter[object_name]=[];break;case"TestCaseResult":all_object_query_filter[object_name]=[];break;case"TestCaseStep":all_object_query_filter[object_name]=[];break;case"TestFolder":all_object_query_filter[object_name]=[];break;case"TestSet":all_object_query_filter[object_name]=[];break;case"User":all_object_query_filter[object_name]=[];break;default:return[]}}),all_object_query_filter}});
+
+            Rally.launchApp('CustomApp', {
+                name:"name=ObjectCounter",
+	            parentRepos:""
+            });
+
+        });
+    </script>
+
+
+    <style type="text/css">
+        
+    </style>
+</head>
+<body>
+</body>
+</html>

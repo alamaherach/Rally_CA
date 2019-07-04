@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite failures="0" time="3.817" errors="0" skipped="0" tests="131" name="TestSuite">
+  <properties>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64"/>
+    <property name="java.vm.version" value="24.181-b01"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/home/ubuntu/workspace/examples/RallyRestToolkitForJava"/>
+    <property name="java.runtime.version" value="1.7.0_181-b01"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Linux"/>
+    <property name="classworlds.conf" value="/usr/share/maven2/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="51.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="4.9.80-c9"/>
+    <property name="user.home" value="/home/ubuntu"/>
+    <property name="user.timezone" value="Etc/UTC"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.specification.version" value="1.7"/>
+    <property name="user.name" value="ubuntu"/>
+    <property name="java.class.path" value="/usr/share/maven2/boot/classworlds.jar"/>
+    <property name="java.vm.specification.version" value="1.7"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/usr/lib/jvm/java-7-openjdk-amd64/jre"/>
+    <property name="sun.java.command" value="org.codehaus.classworlds.Launcher &quot;package&quot;"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.7.0_181"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="securerandom.source" value="file:/dev/./urandom"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/rhino.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="/usr/share/maven2"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase time="0.522" classname="com.rallydev.rest.RallyRestApiTest" name="shouldClose"/>
+  <testcase time="0.106" classname="com.rallydev.rest.RallyRestApiTest" name="shouldCreate"/>
+  <testcase time="0.004" classname="com.rallydev.rest.RallyRestApiTest" name="shouldDelete"/>
+  <testcase time="0.002" classname="com.rallydev.rest.RallyRestApiTest" name="shouldGet"/>
+  <testcase time="0" classname="com.rallydev.rest.RallyRestApiTest" name="shouldGetWsapiVersion"/>
+  <testcase time="0" classname="com.rallydev.rest.RallyRestApiTest" name="shouldInitializeApiKeyClient"/>
+  <testcase time="0.004" classname="com.rallydev.rest.RallyRestApiTest" name="shouldInitializeBasicAuthClient"/>
+  <testcase time="0.007" classname="com.rallydev.rest.RallyRestApiTest" name="shouldQueryAllPages"/>
+  <testcase time="0.005" classname="com.rallydev.rest.RallyRestApiTest" name="shouldQueryAllPagesWithNonStandardStart"/>
+  <testcase time="0.001" classname="com.rallydev.rest.RallyRestApiTest" name="shouldQueryNoPages"/>
+  <testcase time="0" classname="com.rallydev.rest.RallyRestApiTest" name="shouldQueryOnePage"/>
+  <testcase time="0.002" classname="com.rallydev.rest.RallyRestApiTest" name="shouldQuerySomePages"/>
+  <testcase time="0.002" classname="com.rallydev.rest.RallyRestApiTest" name="shouldQuerySomePagesWithNonStandardStart"/>
+  <testcase time="0" classname="com.rallydev.rest.RallyRestApiTest" name="shouldSetName"/>
+  <testcase time="0.04" classname="com.rallydev.rest.RallyRestApiTest" name="shouldSetProxy"/>
+  <testcase time="0.015" classname="com.rallydev.rest.RallyRestApiTest" name="shouldSetProxyWithCredentials"/>
+  <testcase time="0.001" classname="com.rallydev.rest.RallyRestApiTest" name="shouldSetVendor"/>
+  <testcase time="0" classname="com.rallydev.rest.RallyRestApiTest" name="shouldSetVersion"/>
+  <testcase time="0" classname="com.rallydev.rest.RallyRestApiTest" name="shouldSetWsapiVersion"/>
+  <testcase time="0.003" classname="com.rallydev.rest.RallyRestApiTest" name="shouldUpdate"/>
+  <testcase time="0.003" classname="com.rallydev.rest.RallyRestApiTest" name="shouldUpdateCollection"/>
+  <testcase time="0.02" classname="com.rallydev.rest.client.ApiKeyClientTest" name="shouldIncludeApiKeyOnRequest"/>
+  <testcase time="0" classname="com.rallydev.rest.client.ApiKeyClientTest" name="shouldIntialize"/>
+  <testcase time="0.06" classname="com.rallydev.rest.client.BasicAuthClientTest" name="shouldIncludeCSRFTokenOnDelete"/>
+  <testcase time="0.058" classname="com.rallydev.rest.client.BasicAuthClientTest" name="shouldIncludeCSRFTokenOnPost"/>
+  <testcase time="0.002" classname="com.rallydev.rest.client.BasicAuthClientTest" name="shouldIncludeCSRFTokenOnPut"/>
+  <testcase time="0" classname="com.rallydev.rest.client.BasicAuthClientTest" name="shouldIntialize"/>
+  <testcase time="0" classname="com.rallydev.rest.client.BasicAuthClientTest" name="shouldNotIncludeCSRFTokenOnGet"/>
+  <testcase time="0.001" classname="com.rallydev.rest.client.BasicAuthClientTest" name="shouldNotIncludeCSRFTokenOnWsapiv1"/>
+  <testcase time="0.002" classname="com.rallydev.rest.client.BasicAuthClientTest" name="shouldRequestCSRFToken"/>
+  <testcase time="0.022" classname="com.rallydev.rest.client.HttpClientTest" name="shouldDelete"/>
+  <testcase time="0.093" classname="com.rallydev.rest.client.HttpClientTest" name="shouldExplodeWithInvalidResponse"/>
+  <testcase time="0" classname="com.rallydev.rest.client.HttpClientTest" name="shouldGet"/>
+  <testcase time="0.006" classname="com.rallydev.rest.client.HttpClientTest" name="shouldGzip"/>
+  <testcase time="0" classname="com.rallydev.rest.client.HttpClientTest" name="shouldIntialize"/>
+  <testcase time="0.002" classname="com.rallydev.rest.client.HttpClientTest" name="shouldPost"/>
+  <testcase time="0.001" classname="com.rallydev.rest.client.HttpClientTest" name="shouldPut"/>
+  <testcase time="0.002" classname="com.rallydev.rest.client.HttpClientTest" name="shouldReturnValidResponse"/>
+  <testcase time="0.001" classname="com.rallydev.rest.client.HttpClientTest" name="shouldSetApplicationName"/>
+  <testcase time="0.001" classname="com.rallydev.rest.client.HttpClientTest" name="shouldSetApplicationVendor"/>
+  <testcase time="0.001" classname="com.rallydev.rest.client.HttpClientTest" name="shouldSetApplicationVersion"/>
+  <testcase time="0.002" classname="com.rallydev.rest.client.HttpClientTest" name="shouldSetProxy"/>
+  <testcase time="0.301" classname="com.rallydev.rest.client.HttpClientTest" name="shouldSetProxyWithCredentials"/>
+  <testcase time="0.157" classname="com.rallydev.rest.client.HttpClientTest" name="shouldSetWsapiVersion"/>
+  <testcase time="0.102" classname="com.rallydev.rest.client.HttpClientTest" name="shouldUseDefaultWsapiVersion"/>
+  <testcase time="0.003" classname="com.rallydev.rest.request.CollectionUpdateRequestTest" name="shouldConstructTheCorrectUrlForAdds"/>
+  <testcase time="0" classname="com.rallydev.rest.request.CollectionUpdateRequestTest" name="shouldConstructTheCorrectUrlForRemoves"/>
+  <testcase time="0.001" classname="com.rallydev.rest.request.CollectionUpdateRequestTest" name="shouldConstructTheCorrectUrlWithExtraParam"/>
+  <testcase time="0" classname="com.rallydev.rest.request.CollectionUpdateRequestTest" name="shouldCreateACorrectBody"/>
+  <testcase time="0" classname="com.rallydev.rest.request.CreateRequestTest" name="shouldConstructTheCorrectDefaultFetchUrl"/>
+  <testcase time="0.003" classname="com.rallydev.rest.request.CreateRequestTest" name="shouldConstructTheCorrectUrl"/>
+  <testcase time="0.001" classname="com.rallydev.rest.request.CreateRequestTest" name="shouldConstructTheCorrectUrlWithExtraParam"/>
+  <testcase time="0" classname="com.rallydev.rest.request.CreateRequestTest" name="shouldCreateACorrectBody"/>
+  <testcase time="0.006" classname="com.rallydev.rest.request.CreateRequestTest" name="shouldCreateACorrectBodyWithNullFields"/>
+  <testcase time="0.001" classname="com.rallydev.rest.request.CreateRequestTest" name="shouldEncodeParamsUsingUtf8"/>
+  <testcase time="0.001" classname="com.rallydev.rest.request.DeleteRequestTest" name="shouldConstructCorrectUrlWithAbsoluteRef"/>
+  <testcase time="0.001" classname="com.rallydev.rest.request.DeleteRequestTest" name="shouldConstructCorrectUrlWithExtraParam"/>
+  <testcase time="0" classname="com.rallydev.rest.request.DeleteRequestTest" name="shouldConstructCorrectUrlWithRelativeRef"/>
+  <testcase time="0.003" classname="com.rallydev.rest.request.GetRequestTest" name="shouldReturnCorrectUrlForSubscription"/>
+  <testcase time="0.002" classname="com.rallydev.rest.request.GetRequestTest" name="shouldReturnCorrectUrlForUser"/>
+  <testcase time="0.001" classname="com.rallydev.rest.request.GetRequestTest" name="shouldReturnCorrectUrlWithAbsoluteRef"/>
+  <testcase time="0.001" classname="com.rallydev.rest.request.GetRequestTest" name="shouldReturnCorrectUrlWithFetchParams"/>
+  <testcase time="0.001" classname="com.rallydev.rest.request.GetRequestTest" name="shouldReturnCorrectUrlWithRelativeRef"/>
+  <testcase time="0.019" classname="com.rallydev.rest.request.QueryRequestTest" name="shouldCloneCorrectly"/>
+  <testcase time="0.006" classname="com.rallydev.rest.request.QueryRequestTest" name="shouldCreateCorrectDefaultQuery"/>
+  <testcase time="0" classname="com.rallydev.rest.request.QueryRequestTest" name="shouldCreateCorrectDefaultQueryWithExtraParam"/>
+  <testcase time="0.001" classname="com.rallydev.rest.request.QueryRequestTest" name="shouldCreateCorrectQueryWithDefaultOrder"/>
+  <testcase time="0" classname="com.rallydev.rest.request.QueryRequestTest" name="shouldCreateCorrectQueryWithFetch"/>
+  <testcase time="0.001" classname="com.rallydev.rest.request.QueryRequestTest" name="shouldCreateCorrectQueryWithNullProject"/>
+  <testcase time="0.001" classname="com.rallydev.rest.request.QueryRequestTest" name="shouldCreateCorrectQueryWithPageSize"/>
+  <testcase time="0.001" classname="com.rallydev.rest.request.QueryRequestTest" name="shouldCreateCorrectQueryWithProject"/>
+  <testcase time="0.004" classname="com.rallydev.rest.request.QueryRequestTest" name="shouldCreateCorrectQueryWithQuery"/>
+  <testcase time="0.001" classname="com.rallydev.rest.request.QueryRequestTest" name="shouldCreateCorrectQueryWithSpecifiedOrder"/>
+  <testcase time="0.001" classname="com.rallydev.rest.request.QueryRequestTest" name="shouldCreateCorrectQueryWithStart"/>
+  <testcase time="0" classname="com.rallydev.rest.request.QueryRequestTest" name="shouldCreateCorrectQueryWithWorkspace"/>
+  <testcase time="0.001" classname="com.rallydev.rest.request.QueryRequestTest" name="shouldCreateCorrectUrlForCollection"/>
+  <testcase time="0" classname="com.rallydev.rest.request.QueryRequestTest" name="shouldCreateCorrectUrlForSubscription"/>
+  <testcase time="0.001" classname="com.rallydev.rest.request.QueryRequestTest" name="shouldCreateCorrectUrlForUser"/>
+  <testcase time="0" classname="com.rallydev.rest.request.QueryRequestTest" name="shouldEncodeParamsUsingUtf8"/>
+  <testcase time="0.002" classname="com.rallydev.rest.request.RequestTest" name="shouldBeAbleToAddParams"/>
+  <testcase time="0" classname="com.rallydev.rest.request.RequestTest" name="shouldBeAbleToSetGsonBuilder"/>
+  <testcase time="0.001" classname="com.rallydev.rest.request.RequestTest" name="shouldBeAbleToSetParams"/>
+  <testcase time="0" classname="com.rallydev.rest.request.UpdateRequestTest" name="shouldConstructTheCorrectDefaultFetchUrl"/>
+  <testcase time="0.001" classname="com.rallydev.rest.request.UpdateRequestTest" name="shouldConstructTheCorrectUrl"/>
+  <testcase time="0.001" classname="com.rallydev.rest.request.UpdateRequestTest" name="shouldConstructTheCorrectUrlWithExtraParam"/>
+  <testcase time="0" classname="com.rallydev.rest.request.UpdateRequestTest" name="shouldCreateACorrectBody"/>
+  <testcase time="0.001" classname="com.rallydev.rest.request.UpdateRequestTest" name="shouldCreateACorrectBodyWithNullFieldsByDefault"/>
+  <testcase time="0.142" classname="com.rallydev.rest.response.CollectionUpdateResponseTest" name="shouldReturnNoErrors"/>
+  <testcase time="0.001" classname="com.rallydev.rest.response.CollectionUpdateResponseTest" name="shouldReturnResults"/>
+  <testcase time="0" classname="com.rallydev.rest.response.CreateResponseTest" name="shouldReturnCreatedObject"/>
+  <testcase time="0.001" classname="com.rallydev.rest.response.CreateResponseTest" name="shouldReturnErrors"/>
+  <testcase time="0" classname="com.rallydev.rest.response.DeleteResponseTest" name="shouldReturnErrors"/>
+  <testcase time="0" classname="com.rallydev.rest.response.DeleteResponseTest" name="shouldReturnNoErrors"/>
+  <testcase time="0" classname="com.rallydev.rest.response.GetResponseTest" name="shouldReturnErrors"/>
+  <testcase time="0" classname="com.rallydev.rest.response.GetResponseTest" name="shouldReturnNoErrors"/>
+  <testcase time="0" classname="com.rallydev.rest.response.QueryResponseTest" name="shouldReturnNoErrors"/>
+  <testcase time="0" classname="com.rallydev.rest.response.QueryResponseTest" name="shouldReturnResults"/>
+  <testcase time="0.001" classname="com.rallydev.rest.response.ResponseTest" name="shouldReturnErrors"/>
+  <testcase time="0" classname="com.rallydev.rest.response.ResponseTest" name="shouldReturnNoErrors"/>
+  <testcase time="0" classname="com.rallydev.rest.response.ResponseTest" name="shouldReturnNoWarnings"/>
+  <testcase time="0" classname="com.rallydev.rest.response.ResponseTest" name="shouldReturnWarnings"/>
+  <testcase time="0.001" classname="com.rallydev.rest.response.UpdateResponseTest" name="shouldReturnErrors"/>
+  <testcase time="0" classname="com.rallydev.rest.response.UpdateResponseTest" name="shouldReturnUpdatedObject"/>
+  <testcase time="0" classname="com.rallydev.rest.util.FetchTest" name="shouldBeAbleToAddRemoveFetch"/>
+  <testcase time="0" classname="com.rallydev.rest.util.FetchTest" name="shouldProvideCorrectDefaultFetch"/>
+  <testcase time="0" classname="com.rallydev.rest.util.FetchTest" name="shouldProvideCorrectFetch"/>
+  <testcase time="0" classname="com.rallydev.rest.util.QueryFilterTest" name="shouldCreateCorrectAndedQuery"/>
+  <testcase time="0" classname="com.rallydev.rest.util.QueryFilterTest" name="shouldCreateCorrectOredQuery"/>
+  <testcase time="0" classname="com.rallydev.rest.util.QueryFilterTest" name="shouldCreateCorrectQueryForNull"/>
+  <testcase time="0.001" classname="com.rallydev.rest.util.QueryFilterTest" name="shouldCreateCorrectQueryForNumber"/>
+  <testcase time="0.001" classname="com.rallydev.rest.util.QueryFilterTest" name="shouldCreateCorrectQueryForRef"/>
+  <testcase time="0" classname="com.rallydev.rest.util.QueryFilterTest" name="shouldCreateCorrectQueryForString"/>
+  <testcase time="0.001" classname="com.rallydev.rest.util.QueryFilterTest" name="shouldCreateCorrectStaticAndedQuery"/>
+  <testcase time="0.001" classname="com.rallydev.rest.util.QueryFilterTest" name="shouldCreateCorrectStaticOredQuery"/>
+  <testcase time="0.001" classname="com.rallydev.rest.util.QueryFilterTest" name="shouldCreateQuotedQueryForStringWithSpaces"/>
+  <testcase time="0.001" classname="com.rallydev.rest.util.RefTest" name="shouldDetectInvalidRefs"/>
+  <testcase time="0" classname="com.rallydev.rest.util.RefTest" name="shouldDetectValidDynatypeRefs"/>
+  <testcase time="0.001" classname="com.rallydev.rest.util.RefTest" name="shouldDetectValidRefs"/>
+  <testcase time="0" classname="com.rallydev.rest.util.RefTest" name="shouldReturnNullOidsFromRefs"/>
+  <testcase time="0" classname="com.rallydev.rest.util.RefTest" name="shouldReturnNullRelativeRefs"/>
+  <testcase time="0" classname="com.rallydev.rest.util.RefTest" name="shouldReturnNullTypesFromRefs"/>
+  <testcase time="0" classname="com.rallydev.rest.util.RefTest" name="shouldReturnOidsFromDynatypeRefs"/>
+  <testcase time="0" classname="com.rallydev.rest.util.RefTest" name="shouldReturnOidsFromRefs"/>
+  <testcase time="0.001" classname="com.rallydev.rest.util.RefTest" name="shouldReturnTypesFromDynatypeRefs"/>
+  <testcase time="0" classname="com.rallydev.rest.util.RefTest" name="shouldReturnTypesFromRefs"/>
+  <testcase time="0.001" classname="com.rallydev.rest.util.RefTest" name="shouldReturnValidDynatypeRelativeRefs"/>
+  <testcase time="0.001" classname="com.rallydev.rest.util.RefTest" name="shouldReturnValidRelativeRefs"/>
+  <testcase time="0.001" classname="com.rallydev.rest.util.RefTest" name="shouldSupportCollectionRefs"/>
+  <testcase time="0.001" classname="com.rallydev.rest.util.RefTest" name="shouldSupportProjectPermissionRefs"/>
+  <testcase time="0.001" classname="com.rallydev.rest.util.RefTest" name="shouldSupportWorkspacePermissionRefs"/>
+  <testcase time="0.002" classname="com.rallydev.rest.util.RefTest" name="shouldSupportWsapiVersionXinRefs"/>
+</testsuite>

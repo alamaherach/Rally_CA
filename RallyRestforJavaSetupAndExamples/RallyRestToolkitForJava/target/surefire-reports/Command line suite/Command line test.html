@@ -1,0 +1,785 @@
+<html>
+<head>
+<title>TestNG:  Command line test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Command line test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>131/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Sun Jul 22 21:20:08 UTC 2018</td>
+</tr>
+<tr><td>Total time:</td><td>2 seconds (2255 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.rallydev.rest.request.RequestTest.shouldBeAbleToAddParams()'><b>shouldBeAbleToAddParams</b><br>Test class: com.rallydev.rest.request.RequestTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.request.RequestTest@649be74f</td></tr>
+<tr>
+<td title='com.rallydev.rest.util.FetchTest.shouldBeAbleToAddRemoveFetch()'><b>shouldBeAbleToAddRemoveFetch</b><br>Test class: com.rallydev.rest.util.FetchTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.util.FetchTest@5299ef35</td></tr>
+<tr>
+<td title='com.rallydev.rest.request.RequestTest.shouldBeAbleToSetGsonBuilder()'><b>shouldBeAbleToSetGsonBuilder</b><br>Test class: com.rallydev.rest.request.RequestTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.request.RequestTest@649be74f</td></tr>
+<tr>
+<td title='com.rallydev.rest.request.RequestTest.shouldBeAbleToSetParams()'><b>shouldBeAbleToSetParams</b><br>Test class: com.rallydev.rest.request.RequestTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.request.RequestTest@649be74f</td></tr>
+<tr>
+<td title='com.rallydev.rest.request.QueryRequestTest.shouldCloneCorrectly()'><b>shouldCloneCorrectly</b><br>Test class: com.rallydev.rest.request.QueryRequestTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.request.QueryRequestTest@50163f64</td></tr>
+<tr>
+<td title='com.rallydev.rest.RallyRestApiTest.shouldClose()'><b>shouldClose</b><br>Test class: com.rallydev.rest.RallyRestApiTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.RallyRestApiTest@519fbfd6</td></tr>
+<tr>
+<td title='com.rallydev.rest.request.DeleteRequestTest.shouldConstructCorrectUrlWithAbsoluteRef()'><b>shouldConstructCorrectUrlWithAbsoluteRef</b><br>Test class: com.rallydev.rest.request.DeleteRequestTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.request.DeleteRequestTest@470d6c27</td></tr>
+<tr>
+<td title='com.rallydev.rest.request.DeleteRequestTest.shouldConstructCorrectUrlWithExtraParam()'><b>shouldConstructCorrectUrlWithExtraParam</b><br>Test class: com.rallydev.rest.request.DeleteRequestTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.request.DeleteRequestTest@470d6c27</td></tr>
+<tr>
+<td title='com.rallydev.rest.request.DeleteRequestTest.shouldConstructCorrectUrlWithRelativeRef()'><b>shouldConstructCorrectUrlWithRelativeRef</b><br>Test class: com.rallydev.rest.request.DeleteRequestTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.request.DeleteRequestTest@470d6c27</td></tr>
+<tr>
+<td title='com.rallydev.rest.request.CreateRequestTest.shouldConstructTheCorrectDefaultFetchUrl()'><b>shouldConstructTheCorrectDefaultFetchUrl</b><br>Test class: com.rallydev.rest.request.CreateRequestTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.request.CreateRequestTest@60b3f6c2</td></tr>
+<tr>
+<td title='com.rallydev.rest.request.UpdateRequestTest.shouldConstructTheCorrectDefaultFetchUrl()'><b>shouldConstructTheCorrectDefaultFetchUrl</b><br>Test class: com.rallydev.rest.request.UpdateRequestTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.request.UpdateRequestTest@376f2723</td></tr>
+<tr>
+<td title='com.rallydev.rest.request.CreateRequestTest.shouldConstructTheCorrectUrl()'><b>shouldConstructTheCorrectUrl</b><br>Test class: com.rallydev.rest.request.CreateRequestTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.request.CreateRequestTest@60b3f6c2</td></tr>
+<tr>
+<td title='com.rallydev.rest.request.UpdateRequestTest.shouldConstructTheCorrectUrl()'><b>shouldConstructTheCorrectUrl</b><br>Test class: com.rallydev.rest.request.UpdateRequestTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.request.UpdateRequestTest@376f2723</td></tr>
+<tr>
+<td title='com.rallydev.rest.request.CollectionUpdateRequestTest.shouldConstructTheCorrectUrlForAdds()'><b>shouldConstructTheCorrectUrlForAdds</b><br>Test class: com.rallydev.rest.request.CollectionUpdateRequestTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.request.CollectionUpdateRequestTest@24f157b0</td></tr>
+<tr>
+<td title='com.rallydev.rest.request.CollectionUpdateRequestTest.shouldConstructTheCorrectUrlForRemoves()'><b>shouldConstructTheCorrectUrlForRemoves</b><br>Test class: com.rallydev.rest.request.CollectionUpdateRequestTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.request.CollectionUpdateRequestTest@24f157b0</td></tr>
+<tr>
+<td title='com.rallydev.rest.request.CollectionUpdateRequestTest.shouldConstructTheCorrectUrlWithExtraParam()'><b>shouldConstructTheCorrectUrlWithExtraParam</b><br>Test class: com.rallydev.rest.request.CollectionUpdateRequestTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.request.CollectionUpdateRequestTest@24f157b0</td></tr>
+<tr>
+<td title='com.rallydev.rest.request.CreateRequestTest.shouldConstructTheCorrectUrlWithExtraParam()'><b>shouldConstructTheCorrectUrlWithExtraParam</b><br>Test class: com.rallydev.rest.request.CreateRequestTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.request.CreateRequestTest@60b3f6c2</td></tr>
+<tr>
+<td title='com.rallydev.rest.request.UpdateRequestTest.shouldConstructTheCorrectUrlWithExtraParam()'><b>shouldConstructTheCorrectUrlWithExtraParam</b><br>Test class: com.rallydev.rest.request.UpdateRequestTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.request.UpdateRequestTest@376f2723</td></tr>
+<tr>
+<td title='com.rallydev.rest.RallyRestApiTest.shouldCreate()'><b>shouldCreate</b><br>Test class: com.rallydev.rest.RallyRestApiTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.RallyRestApiTest@519fbfd6</td></tr>
+<tr>
+<td title='com.rallydev.rest.request.CollectionUpdateRequestTest.shouldCreateACorrectBody()'><b>shouldCreateACorrectBody</b><br>Test class: com.rallydev.rest.request.CollectionUpdateRequestTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.request.CollectionUpdateRequestTest@24f157b0</td></tr>
+<tr>
+<td title='com.rallydev.rest.request.CreateRequestTest.shouldCreateACorrectBody()'><b>shouldCreateACorrectBody</b><br>Test class: com.rallydev.rest.request.CreateRequestTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.request.CreateRequestTest@60b3f6c2</td></tr>
+<tr>
+<td title='com.rallydev.rest.request.UpdateRequestTest.shouldCreateACorrectBody()'><b>shouldCreateACorrectBody</b><br>Test class: com.rallydev.rest.request.UpdateRequestTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.request.UpdateRequestTest@376f2723</td></tr>
+<tr>
+<td title='com.rallydev.rest.request.CreateRequestTest.shouldCreateACorrectBodyWithNullFields()'><b>shouldCreateACorrectBodyWithNullFields</b><br>Test class: com.rallydev.rest.request.CreateRequestTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.request.CreateRequestTest@60b3f6c2</td></tr>
+<tr>
+<td title='com.rallydev.rest.request.UpdateRequestTest.shouldCreateACorrectBodyWithNullFieldsByDefault()'><b>shouldCreateACorrectBodyWithNullFieldsByDefault</b><br>Test class: com.rallydev.rest.request.UpdateRequestTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.request.UpdateRequestTest@376f2723</td></tr>
+<tr>
+<td title='com.rallydev.rest.util.QueryFilterTest.shouldCreateCorrectAndedQuery()'><b>shouldCreateCorrectAndedQuery</b><br>Test class: com.rallydev.rest.util.QueryFilterTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.util.QueryFilterTest@7827aaf0</td></tr>
+<tr>
+<td title='com.rallydev.rest.request.QueryRequestTest.shouldCreateCorrectDefaultQuery()'><b>shouldCreateCorrectDefaultQuery</b><br>Test class: com.rallydev.rest.request.QueryRequestTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.request.QueryRequestTest@50163f64</td></tr>
+<tr>
+<td title='com.rallydev.rest.request.QueryRequestTest.shouldCreateCorrectDefaultQueryWithExtraParam()'><b>shouldCreateCorrectDefaultQueryWithExtraParam</b><br>Test class: com.rallydev.rest.request.QueryRequestTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.request.QueryRequestTest@50163f64</td></tr>
+<tr>
+<td title='com.rallydev.rest.util.QueryFilterTest.shouldCreateCorrectOredQuery()'><b>shouldCreateCorrectOredQuery</b><br>Test class: com.rallydev.rest.util.QueryFilterTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.util.QueryFilterTest@7827aaf0</td></tr>
+<tr>
+<td title='com.rallydev.rest.util.QueryFilterTest.shouldCreateCorrectQueryForNull()'><b>shouldCreateCorrectQueryForNull</b><br>Test class: com.rallydev.rest.util.QueryFilterTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.util.QueryFilterTest@7827aaf0</td></tr>
+<tr>
+<td title='com.rallydev.rest.util.QueryFilterTest.shouldCreateCorrectQueryForNumber()'><b>shouldCreateCorrectQueryForNumber</b><br>Test class: com.rallydev.rest.util.QueryFilterTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.util.QueryFilterTest@7827aaf0</td></tr>
+<tr>
+<td title='com.rallydev.rest.util.QueryFilterTest.shouldCreateCorrectQueryForRef()'><b>shouldCreateCorrectQueryForRef</b><br>Test class: com.rallydev.rest.util.QueryFilterTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.util.QueryFilterTest@7827aaf0</td></tr>
+<tr>
+<td title='com.rallydev.rest.util.QueryFilterTest.shouldCreateCorrectQueryForString()'><b>shouldCreateCorrectQueryForString</b><br>Test class: com.rallydev.rest.util.QueryFilterTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.util.QueryFilterTest@7827aaf0</td></tr>
+<tr>
+<td title='com.rallydev.rest.request.QueryRequestTest.shouldCreateCorrectQueryWithDefaultOrder()'><b>shouldCreateCorrectQueryWithDefaultOrder</b><br>Test class: com.rallydev.rest.request.QueryRequestTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.request.QueryRequestTest@50163f64</td></tr>
+<tr>
+<td title='com.rallydev.rest.request.QueryRequestTest.shouldCreateCorrectQueryWithFetch()'><b>shouldCreateCorrectQueryWithFetch</b><br>Test class: com.rallydev.rest.request.QueryRequestTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.request.QueryRequestTest@50163f64</td></tr>
+<tr>
+<td title='com.rallydev.rest.request.QueryRequestTest.shouldCreateCorrectQueryWithNullProject()'><b>shouldCreateCorrectQueryWithNullProject</b><br>Test class: com.rallydev.rest.request.QueryRequestTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.request.QueryRequestTest@50163f64</td></tr>
+<tr>
+<td title='com.rallydev.rest.request.QueryRequestTest.shouldCreateCorrectQueryWithPageSize()'><b>shouldCreateCorrectQueryWithPageSize</b><br>Test class: com.rallydev.rest.request.QueryRequestTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.request.QueryRequestTest@50163f64</td></tr>
+<tr>
+<td title='com.rallydev.rest.request.QueryRequestTest.shouldCreateCorrectQueryWithProject()'><b>shouldCreateCorrectQueryWithProject</b><br>Test class: com.rallydev.rest.request.QueryRequestTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.request.QueryRequestTest@50163f64</td></tr>
+<tr>
+<td title='com.rallydev.rest.request.QueryRequestTest.shouldCreateCorrectQueryWithQuery()'><b>shouldCreateCorrectQueryWithQuery</b><br>Test class: com.rallydev.rest.request.QueryRequestTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.request.QueryRequestTest@50163f64</td></tr>
+<tr>
+<td title='com.rallydev.rest.request.QueryRequestTest.shouldCreateCorrectQueryWithSpecifiedOrder()'><b>shouldCreateCorrectQueryWithSpecifiedOrder</b><br>Test class: com.rallydev.rest.request.QueryRequestTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.request.QueryRequestTest@50163f64</td></tr>
+<tr>
+<td title='com.rallydev.rest.request.QueryRequestTest.shouldCreateCorrectQueryWithStart()'><b>shouldCreateCorrectQueryWithStart</b><br>Test class: com.rallydev.rest.request.QueryRequestTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.request.QueryRequestTest@50163f64</td></tr>
+<tr>
+<td title='com.rallydev.rest.request.QueryRequestTest.shouldCreateCorrectQueryWithWorkspace()'><b>shouldCreateCorrectQueryWithWorkspace</b><br>Test class: com.rallydev.rest.request.QueryRequestTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.request.QueryRequestTest@50163f64</td></tr>
+<tr>
+<td title='com.rallydev.rest.util.QueryFilterTest.shouldCreateCorrectStaticAndedQuery()'><b>shouldCreateCorrectStaticAndedQuery</b><br>Test class: com.rallydev.rest.util.QueryFilterTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.util.QueryFilterTest@7827aaf0</td></tr>
+<tr>
+<td title='com.rallydev.rest.util.QueryFilterTest.shouldCreateCorrectStaticOredQuery()'><b>shouldCreateCorrectStaticOredQuery</b><br>Test class: com.rallydev.rest.util.QueryFilterTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.util.QueryFilterTest@7827aaf0</td></tr>
+<tr>
+<td title='com.rallydev.rest.request.QueryRequestTest.shouldCreateCorrectUrlForCollection()'><b>shouldCreateCorrectUrlForCollection</b><br>Test class: com.rallydev.rest.request.QueryRequestTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.request.QueryRequestTest@50163f64</td></tr>
+<tr>
+<td title='com.rallydev.rest.request.QueryRequestTest.shouldCreateCorrectUrlForSubscription()'><b>shouldCreateCorrectUrlForSubscription</b><br>Test class: com.rallydev.rest.request.QueryRequestTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.request.QueryRequestTest@50163f64</td></tr>
+<tr>
+<td title='com.rallydev.rest.request.QueryRequestTest.shouldCreateCorrectUrlForUser()'><b>shouldCreateCorrectUrlForUser</b><br>Test class: com.rallydev.rest.request.QueryRequestTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.request.QueryRequestTest@50163f64</td></tr>
+<tr>
+<td title='com.rallydev.rest.util.QueryFilterTest.shouldCreateQuotedQueryForStringWithSpaces()'><b>shouldCreateQuotedQueryForStringWithSpaces</b><br>Test class: com.rallydev.rest.util.QueryFilterTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.util.QueryFilterTest@7827aaf0</td></tr>
+<tr>
+<td title='com.rallydev.rest.RallyRestApiTest.shouldDelete()'><b>shouldDelete</b><br>Test class: com.rallydev.rest.RallyRestApiTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.RallyRestApiTest@519fbfd6</td></tr>
+<tr>
+<td title='com.rallydev.rest.client.HttpClientTest.shouldDelete()'><b>shouldDelete</b><br>Test class: com.rallydev.rest.client.HttpClientTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.client.HttpClientTest@24f454e4</td></tr>
+<tr>
+<td title='com.rallydev.rest.util.RefTest.shouldDetectInvalidRefs()'><b>shouldDetectInvalidRefs</b><br>Test class: com.rallydev.rest.util.RefTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.util.RefTest@7447b030</td></tr>
+<tr>
+<td title='com.rallydev.rest.util.RefTest.shouldDetectValidDynatypeRefs()'><b>shouldDetectValidDynatypeRefs</b><br>Test class: com.rallydev.rest.util.RefTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.util.RefTest@7447b030</td></tr>
+<tr>
+<td title='com.rallydev.rest.util.RefTest.shouldDetectValidRefs()'><b>shouldDetectValidRefs</b><br>Test class: com.rallydev.rest.util.RefTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.util.RefTest@7447b030</td></tr>
+<tr>
+<td title='com.rallydev.rest.request.CreateRequestTest.shouldEncodeParamsUsingUtf8()'><b>shouldEncodeParamsUsingUtf8</b><br>Test class: com.rallydev.rest.request.CreateRequestTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.request.CreateRequestTest@60b3f6c2</td></tr>
+<tr>
+<td title='com.rallydev.rest.request.QueryRequestTest.shouldEncodeParamsUsingUtf8()'><b>shouldEncodeParamsUsingUtf8</b><br>Test class: com.rallydev.rest.request.QueryRequestTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.request.QueryRequestTest@50163f64</td></tr>
+<tr>
+<td title='com.rallydev.rest.client.HttpClientTest.shouldExplodeWithInvalidResponse()'><b>shouldExplodeWithInvalidResponse</b><br>Test class: com.rallydev.rest.client.HttpClientTest</td>
+<td><div><pre>java.io.IOException: Mock for StatusLine, hashCode: 59912595
+	at com.rallydev.rest.client.HttpClient.executeRequest(HttpClient.java:163)
+	at com.rallydev.rest.client.HttpClientTest.shouldExplodeWithInvalidResponse(HttpClientTest.java:151)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:70)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:158)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:98)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:111)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+... Removed 26 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1944210063", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1944210063'><pre>java.io.IOException: Mock for StatusLine, hashCode: 59912595
+	at com.rallydev.rest.client.HttpClient.executeRequest(HttpClient.java:163)
+	at com.rallydev.rest.client.HttpClientTest.shouldExplodeWithInvalidResponse(HttpClientTest.java:151)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:673)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:842)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1166)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.runWorkers(TestRunner.java:1178)
+	at org.testng.TestRunner.privateRun(TestRunner.java:757)
+	at org.testng.TestRunner.run(TestRunner.java:608)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1158)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1083)
+	at org.testng.TestNG.run(TestNG.java:999)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:70)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:158)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:98)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:111)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+</pre></div></td>
+<td>0</td>
+<td>com.rallydev.rest.client.HttpClientTest@24f454e4</td></tr>
+<tr>
+<td title='com.rallydev.rest.RallyRestApiTest.shouldGet()'><b>shouldGet</b><br>Test class: com.rallydev.rest.RallyRestApiTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.RallyRestApiTest@519fbfd6</td></tr>
+<tr>
+<td title='com.rallydev.rest.client.HttpClientTest.shouldGet()'><b>shouldGet</b><br>Test class: com.rallydev.rest.client.HttpClientTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.client.HttpClientTest@24f454e4</td></tr>
+<tr>
+<td title='com.rallydev.rest.RallyRestApiTest.shouldGetWsapiVersion()'><b>shouldGetWsapiVersion</b><br>Test class: com.rallydev.rest.RallyRestApiTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.RallyRestApiTest@519fbfd6</td></tr>
+<tr>
+<td title='com.rallydev.rest.client.HttpClientTest.shouldGzip()'><b>shouldGzip</b><br>Test class: com.rallydev.rest.client.HttpClientTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.client.HttpClientTest@24f454e4</td></tr>
+<tr>
+<td title='com.rallydev.rest.client.ApiKeyClientTest.shouldIncludeApiKeyOnRequest()'><b>shouldIncludeApiKeyOnRequest</b><br>Test class: com.rallydev.rest.client.ApiKeyClientTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.client.ApiKeyClientTest@4eeba477</td></tr>
+<tr>
+<td title='com.rallydev.rest.client.BasicAuthClientTest.shouldIncludeCSRFTokenOnDelete()'><b>shouldIncludeCSRFTokenOnDelete</b><br>Test class: com.rallydev.rest.client.BasicAuthClientTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.client.BasicAuthClientTest@507aa91b</td></tr>
+<tr>
+<td title='com.rallydev.rest.client.BasicAuthClientTest.shouldIncludeCSRFTokenOnPost()'><b>shouldIncludeCSRFTokenOnPost</b><br>Test class: com.rallydev.rest.client.BasicAuthClientTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.client.BasicAuthClientTest@507aa91b</td></tr>
+<tr>
+<td title='com.rallydev.rest.client.BasicAuthClientTest.shouldIncludeCSRFTokenOnPut()'><b>shouldIncludeCSRFTokenOnPut</b><br>Test class: com.rallydev.rest.client.BasicAuthClientTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.client.BasicAuthClientTest@507aa91b</td></tr>
+<tr>
+<td title='com.rallydev.rest.RallyRestApiTest.shouldInitializeApiKeyClient()'><b>shouldInitializeApiKeyClient</b><br>Test class: com.rallydev.rest.RallyRestApiTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.RallyRestApiTest@519fbfd6</td></tr>
+<tr>
+<td title='com.rallydev.rest.RallyRestApiTest.shouldInitializeBasicAuthClient()'><b>shouldInitializeBasicAuthClient</b><br>Test class: com.rallydev.rest.RallyRestApiTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.RallyRestApiTest@519fbfd6</td></tr>
+<tr>
+<td title='com.rallydev.rest.client.ApiKeyClientTest.shouldIntialize()'><b>shouldIntialize</b><br>Test class: com.rallydev.rest.client.ApiKeyClientTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.client.ApiKeyClientTest@4eeba477</td></tr>
+<tr>
+<td title='com.rallydev.rest.client.BasicAuthClientTest.shouldIntialize()'><b>shouldIntialize</b><br>Test class: com.rallydev.rest.client.BasicAuthClientTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.client.BasicAuthClientTest@507aa91b</td></tr>
+<tr>
+<td title='com.rallydev.rest.client.HttpClientTest.shouldIntialize()'><b>shouldIntialize</b><br>Test class: com.rallydev.rest.client.HttpClientTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.client.HttpClientTest@24f454e4</td></tr>
+<tr>
+<td title='com.rallydev.rest.client.BasicAuthClientTest.shouldNotIncludeCSRFTokenOnGet()'><b>shouldNotIncludeCSRFTokenOnGet</b><br>Test class: com.rallydev.rest.client.BasicAuthClientTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.client.BasicAuthClientTest@507aa91b</td></tr>
+<tr>
+<td title='com.rallydev.rest.client.BasicAuthClientTest.shouldNotIncludeCSRFTokenOnWsapiv1()'><b>shouldNotIncludeCSRFTokenOnWsapiv1</b><br>Test class: com.rallydev.rest.client.BasicAuthClientTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.client.BasicAuthClientTest@507aa91b</td></tr>
+<tr>
+<td title='com.rallydev.rest.client.HttpClientTest.shouldPost()'><b>shouldPost</b><br>Test class: com.rallydev.rest.client.HttpClientTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.client.HttpClientTest@24f454e4</td></tr>
+<tr>
+<td title='com.rallydev.rest.util.FetchTest.shouldProvideCorrectDefaultFetch()'><b>shouldProvideCorrectDefaultFetch</b><br>Test class: com.rallydev.rest.util.FetchTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.util.FetchTest@5299ef35</td></tr>
+<tr>
+<td title='com.rallydev.rest.util.FetchTest.shouldProvideCorrectFetch()'><b>shouldProvideCorrectFetch</b><br>Test class: com.rallydev.rest.util.FetchTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.util.FetchTest@5299ef35</td></tr>
+<tr>
+<td title='com.rallydev.rest.client.HttpClientTest.shouldPut()'><b>shouldPut</b><br>Test class: com.rallydev.rest.client.HttpClientTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.client.HttpClientTest@24f454e4</td></tr>
+<tr>
+<td title='com.rallydev.rest.RallyRestApiTest.shouldQueryAllPages()'><b>shouldQueryAllPages</b><br>Test class: com.rallydev.rest.RallyRestApiTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.RallyRestApiTest@519fbfd6</td></tr>
+<tr>
+<td title='com.rallydev.rest.RallyRestApiTest.shouldQueryAllPagesWithNonStandardStart()'><b>shouldQueryAllPagesWithNonStandardStart</b><br>Test class: com.rallydev.rest.RallyRestApiTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.RallyRestApiTest@519fbfd6</td></tr>
+<tr>
+<td title='com.rallydev.rest.RallyRestApiTest.shouldQueryNoPages()'><b>shouldQueryNoPages</b><br>Test class: com.rallydev.rest.RallyRestApiTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.RallyRestApiTest@519fbfd6</td></tr>
+<tr>
+<td title='com.rallydev.rest.RallyRestApiTest.shouldQueryOnePage()'><b>shouldQueryOnePage</b><br>Test class: com.rallydev.rest.RallyRestApiTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.RallyRestApiTest@519fbfd6</td></tr>
+<tr>
+<td title='com.rallydev.rest.RallyRestApiTest.shouldQuerySomePages()'><b>shouldQuerySomePages</b><br>Test class: com.rallydev.rest.RallyRestApiTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.RallyRestApiTest@519fbfd6</td></tr>
+<tr>
+<td title='com.rallydev.rest.RallyRestApiTest.shouldQuerySomePagesWithNonStandardStart()'><b>shouldQuerySomePagesWithNonStandardStart</b><br>Test class: com.rallydev.rest.RallyRestApiTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.RallyRestApiTest@519fbfd6</td></tr>
+<tr>
+<td title='com.rallydev.rest.client.BasicAuthClientTest.shouldRequestCSRFToken()'><b>shouldRequestCSRFToken</b><br>Test class: com.rallydev.rest.client.BasicAuthClientTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.client.BasicAuthClientTest@507aa91b</td></tr>
+<tr>
+<td title='com.rallydev.rest.request.GetRequestTest.shouldReturnCorrectUrlForSubscription()'><b>shouldReturnCorrectUrlForSubscription</b><br>Test class: com.rallydev.rest.request.GetRequestTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.request.GetRequestTest@423798e2</td></tr>
+<tr>
+<td title='com.rallydev.rest.request.GetRequestTest.shouldReturnCorrectUrlForUser()'><b>shouldReturnCorrectUrlForUser</b><br>Test class: com.rallydev.rest.request.GetRequestTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.request.GetRequestTest@423798e2</td></tr>
+<tr>
+<td title='com.rallydev.rest.request.GetRequestTest.shouldReturnCorrectUrlWithAbsoluteRef()'><b>shouldReturnCorrectUrlWithAbsoluteRef</b><br>Test class: com.rallydev.rest.request.GetRequestTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.request.GetRequestTest@423798e2</td></tr>
+<tr>
+<td title='com.rallydev.rest.request.GetRequestTest.shouldReturnCorrectUrlWithFetchParams()'><b>shouldReturnCorrectUrlWithFetchParams</b><br>Test class: com.rallydev.rest.request.GetRequestTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.request.GetRequestTest@423798e2</td></tr>
+<tr>
+<td title='com.rallydev.rest.request.GetRequestTest.shouldReturnCorrectUrlWithRelativeRef()'><b>shouldReturnCorrectUrlWithRelativeRef</b><br>Test class: com.rallydev.rest.request.GetRequestTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.request.GetRequestTest@423798e2</td></tr>
+<tr>
+<td title='com.rallydev.rest.response.CreateResponseTest.shouldReturnCreatedObject()'><b>shouldReturnCreatedObject</b><br>Test class: com.rallydev.rest.response.CreateResponseTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.response.CreateResponseTest@4d0e7233</td></tr>
+<tr>
+<td title='com.rallydev.rest.response.CreateResponseTest.shouldReturnErrors()'><b>shouldReturnErrors</b><br>Test class: com.rallydev.rest.response.CreateResponseTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.response.CreateResponseTest@4d0e7233</td></tr>
+<tr>
+<td title='com.rallydev.rest.response.DeleteResponseTest.shouldReturnErrors()'><b>shouldReturnErrors</b><br>Test class: com.rallydev.rest.response.DeleteResponseTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.response.DeleteResponseTest@6f6b99ca</td></tr>
+<tr>
+<td title='com.rallydev.rest.response.GetResponseTest.shouldReturnErrors()'><b>shouldReturnErrors</b><br>Test class: com.rallydev.rest.response.GetResponseTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.response.GetResponseTest@13dd5ec</td></tr>
+<tr>
+<td title='com.rallydev.rest.response.ResponseTest.shouldReturnErrors()'><b>shouldReturnErrors</b><br>Test class: com.rallydev.rest.response.ResponseTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.response.ResponseTest@411fa9dd</td></tr>
+<tr>
+<td title='com.rallydev.rest.response.UpdateResponseTest.shouldReturnErrors()'><b>shouldReturnErrors</b><br>Test class: com.rallydev.rest.response.UpdateResponseTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.response.UpdateResponseTest@5c90d92</td></tr>
+<tr>
+<td title='com.rallydev.rest.response.CollectionUpdateResponseTest.shouldReturnNoErrors()'><b>shouldReturnNoErrors</b><br>Test class: com.rallydev.rest.response.CollectionUpdateResponseTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.response.CollectionUpdateResponseTest@62728743</td></tr>
+<tr>
+<td title='com.rallydev.rest.response.DeleteResponseTest.shouldReturnNoErrors()'><b>shouldReturnNoErrors</b><br>Test class: com.rallydev.rest.response.DeleteResponseTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.response.DeleteResponseTest@6f6b99ca</td></tr>
+<tr>
+<td title='com.rallydev.rest.response.GetResponseTest.shouldReturnNoErrors()'><b>shouldReturnNoErrors</b><br>Test class: com.rallydev.rest.response.GetResponseTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.response.GetResponseTest@13dd5ec</td></tr>
+<tr>
+<td title='com.rallydev.rest.response.QueryResponseTest.shouldReturnNoErrors()'><b>shouldReturnNoErrors</b><br>Test class: com.rallydev.rest.response.QueryResponseTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.response.QueryResponseTest@2a77997</td></tr>
+<tr>
+<td title='com.rallydev.rest.response.ResponseTest.shouldReturnNoErrors()'><b>shouldReturnNoErrors</b><br>Test class: com.rallydev.rest.response.ResponseTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.response.ResponseTest@411fa9dd</td></tr>
+<tr>
+<td title='com.rallydev.rest.response.ResponseTest.shouldReturnNoWarnings()'><b>shouldReturnNoWarnings</b><br>Test class: com.rallydev.rest.response.ResponseTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.response.ResponseTest@411fa9dd</td></tr>
+<tr>
+<td title='com.rallydev.rest.util.RefTest.shouldReturnNullOidsFromRefs()'><b>shouldReturnNullOidsFromRefs</b><br>Test class: com.rallydev.rest.util.RefTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.util.RefTest@7447b030</td></tr>
+<tr>
+<td title='com.rallydev.rest.util.RefTest.shouldReturnNullRelativeRefs()'><b>shouldReturnNullRelativeRefs</b><br>Test class: com.rallydev.rest.util.RefTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.util.RefTest@7447b030</td></tr>
+<tr>
+<td title='com.rallydev.rest.util.RefTest.shouldReturnNullTypesFromRefs()'><b>shouldReturnNullTypesFromRefs</b><br>Test class: com.rallydev.rest.util.RefTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.util.RefTest@7447b030</td></tr>
+<tr>
+<td title='com.rallydev.rest.util.RefTest.shouldReturnOidsFromDynatypeRefs()'><b>shouldReturnOidsFromDynatypeRefs</b><br>Test class: com.rallydev.rest.util.RefTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.util.RefTest@7447b030</td></tr>
+<tr>
+<td title='com.rallydev.rest.util.RefTest.shouldReturnOidsFromRefs()'><b>shouldReturnOidsFromRefs</b><br>Test class: com.rallydev.rest.util.RefTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.util.RefTest@7447b030</td></tr>
+<tr>
+<td title='com.rallydev.rest.response.CollectionUpdateResponseTest.shouldReturnResults()'><b>shouldReturnResults</b><br>Test class: com.rallydev.rest.response.CollectionUpdateResponseTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.response.CollectionUpdateResponseTest@62728743</td></tr>
+<tr>
+<td title='com.rallydev.rest.response.QueryResponseTest.shouldReturnResults()'><b>shouldReturnResults</b><br>Test class: com.rallydev.rest.response.QueryResponseTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.response.QueryResponseTest@2a77997</td></tr>
+<tr>
+<td title='com.rallydev.rest.util.RefTest.shouldReturnTypesFromDynatypeRefs()'><b>shouldReturnTypesFromDynatypeRefs</b><br>Test class: com.rallydev.rest.util.RefTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.util.RefTest@7447b030</td></tr>
+<tr>
+<td title='com.rallydev.rest.util.RefTest.shouldReturnTypesFromRefs()'><b>shouldReturnTypesFromRefs</b><br>Test class: com.rallydev.rest.util.RefTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.util.RefTest@7447b030</td></tr>
+<tr>
+<td title='com.rallydev.rest.response.UpdateResponseTest.shouldReturnUpdatedObject()'><b>shouldReturnUpdatedObject</b><br>Test class: com.rallydev.rest.response.UpdateResponseTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.response.UpdateResponseTest@5c90d92</td></tr>
+<tr>
+<td title='com.rallydev.rest.util.RefTest.shouldReturnValidDynatypeRelativeRefs()'><b>shouldReturnValidDynatypeRelativeRefs</b><br>Test class: com.rallydev.rest.util.RefTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.util.RefTest@7447b030</td></tr>
+<tr>
+<td title='com.rallydev.rest.util.RefTest.shouldReturnValidRelativeRefs()'><b>shouldReturnValidRelativeRefs</b><br>Test class: com.rallydev.rest.util.RefTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.util.RefTest@7447b030</td></tr>
+<tr>
+<td title='com.rallydev.rest.client.HttpClientTest.shouldReturnValidResponse()'><b>shouldReturnValidResponse</b><br>Test class: com.rallydev.rest.client.HttpClientTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.client.HttpClientTest@24f454e4</td></tr>
+<tr>
+<td title='com.rallydev.rest.response.ResponseTest.shouldReturnWarnings()'><b>shouldReturnWarnings</b><br>Test class: com.rallydev.rest.response.ResponseTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.response.ResponseTest@411fa9dd</td></tr>
+<tr>
+<td title='com.rallydev.rest.client.HttpClientTest.shouldSetApplicationName()'><b>shouldSetApplicationName</b><br>Test class: com.rallydev.rest.client.HttpClientTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.client.HttpClientTest@24f454e4</td></tr>
+<tr>
+<td title='com.rallydev.rest.client.HttpClientTest.shouldSetApplicationVendor()'><b>shouldSetApplicationVendor</b><br>Test class: com.rallydev.rest.client.HttpClientTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.client.HttpClientTest@24f454e4</td></tr>
+<tr>
+<td title='com.rallydev.rest.client.HttpClientTest.shouldSetApplicationVersion()'><b>shouldSetApplicationVersion</b><br>Test class: com.rallydev.rest.client.HttpClientTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.client.HttpClientTest@24f454e4</td></tr>
+<tr>
+<td title='com.rallydev.rest.RallyRestApiTest.shouldSetName()'><b>shouldSetName</b><br>Test class: com.rallydev.rest.RallyRestApiTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.RallyRestApiTest@519fbfd6</td></tr>
+<tr>
+<td title='com.rallydev.rest.RallyRestApiTest.shouldSetProxy()'><b>shouldSetProxy</b><br>Test class: com.rallydev.rest.RallyRestApiTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.RallyRestApiTest@519fbfd6</td></tr>
+<tr>
+<td title='com.rallydev.rest.client.HttpClientTest.shouldSetProxy()'><b>shouldSetProxy</b><br>Test class: com.rallydev.rest.client.HttpClientTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.client.HttpClientTest@24f454e4</td></tr>
+<tr>
+<td title='com.rallydev.rest.RallyRestApiTest.shouldSetProxyWithCredentials()'><b>shouldSetProxyWithCredentials</b><br>Test class: com.rallydev.rest.RallyRestApiTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.RallyRestApiTest@519fbfd6</td></tr>
+<tr>
+<td title='com.rallydev.rest.client.HttpClientTest.shouldSetProxyWithCredentials()'><b>shouldSetProxyWithCredentials</b><br>Test class: com.rallydev.rest.client.HttpClientTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.client.HttpClientTest@24f454e4</td></tr>
+<tr>
+<td title='com.rallydev.rest.RallyRestApiTest.shouldSetVendor()'><b>shouldSetVendor</b><br>Test class: com.rallydev.rest.RallyRestApiTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.RallyRestApiTest@519fbfd6</td></tr>
+<tr>
+<td title='com.rallydev.rest.RallyRestApiTest.shouldSetVersion()'><b>shouldSetVersion</b><br>Test class: com.rallydev.rest.RallyRestApiTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.RallyRestApiTest@519fbfd6</td></tr>
+<tr>
+<td title='com.rallydev.rest.RallyRestApiTest.shouldSetWsapiVersion()'><b>shouldSetWsapiVersion</b><br>Test class: com.rallydev.rest.RallyRestApiTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.RallyRestApiTest@519fbfd6</td></tr>
+<tr>
+<td title='com.rallydev.rest.client.HttpClientTest.shouldSetWsapiVersion()'><b>shouldSetWsapiVersion</b><br>Test class: com.rallydev.rest.client.HttpClientTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.client.HttpClientTest@24f454e4</td></tr>
+<tr>
+<td title='com.rallydev.rest.util.RefTest.shouldSupportCollectionRefs()'><b>shouldSupportCollectionRefs</b><br>Test class: com.rallydev.rest.util.RefTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.util.RefTest@7447b030</td></tr>
+<tr>
+<td title='com.rallydev.rest.util.RefTest.shouldSupportProjectPermissionRefs()'><b>shouldSupportProjectPermissionRefs</b><br>Test class: com.rallydev.rest.util.RefTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.util.RefTest@7447b030</td></tr>
+<tr>
+<td title='com.rallydev.rest.util.RefTest.shouldSupportWorkspacePermissionRefs()'><b>shouldSupportWorkspacePermissionRefs</b><br>Test class: com.rallydev.rest.util.RefTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.util.RefTest@7447b030</td></tr>
+<tr>
+<td title='com.rallydev.rest.util.RefTest.shouldSupportWsapiVersionXinRefs()'><b>shouldSupportWsapiVersionXinRefs</b><br>Test class: com.rallydev.rest.util.RefTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.util.RefTest@7447b030</td></tr>
+<tr>
+<td title='com.rallydev.rest.RallyRestApiTest.shouldUpdate()'><b>shouldUpdate</b><br>Test class: com.rallydev.rest.RallyRestApiTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.RallyRestApiTest@519fbfd6</td></tr>
+<tr>
+<td title='com.rallydev.rest.RallyRestApiTest.shouldUpdateCollection()'><b>shouldUpdateCollection</b><br>Test class: com.rallydev.rest.RallyRestApiTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.RallyRestApiTest@519fbfd6</td></tr>
+<tr>
+<td title='com.rallydev.rest.client.HttpClientTest.shouldUseDefaultWsapiVersion()'><b>shouldUseDefaultWsapiVersion</b><br>Test class: com.rallydev.rest.client.HttpClientTest</td>
+<td></td>
+<td>0</td>
+<td>com.rallydev.rest.client.HttpClientTest@24f454e4</td></tr>
+</table><p>
+</body>
+</html>
